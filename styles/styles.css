@@ -208,6 +208,25 @@ footer p {
     color: yellow;
 }
 
+#coursesTabsContent {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 1rem 1rem 1rem;
+    border-top: 1px solid gray;
+}
+  
+#coursesTabsContent div{
+    width: calc(33.33% - 20px); 
+    margin: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid gray
+}
+
+
 @media screen and (max-width: 640px){
 
     span.name {
@@ -304,7 +323,15 @@ footer p {
         height: 100%;
     }
 
-
-
+    #coursesTabsContent {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+      
+    #coursesTabsContent div{
+        width: 100%;
+        margin: 10px auto;
+    }
     
 }
