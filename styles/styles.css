@@ -226,9 +226,16 @@ footer p {
     border: 1px solid gray
 }
 
+#coursesTabsCredits {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
 
 @media screen and (max-width: 640px){
 
+    
     span.name {
         font-size: 17px;
     }
@@ -255,7 +262,7 @@ footer p {
         justify-content: center;
         align-items: center;
         position: fixed;
-        top: -100%;
+        top: -150%;
         right: 0;
         background-color: rgba(0, 0, 0, 0.983);
         overflow: hidden;
@@ -334,4 +341,15 @@ footer p {
         margin: 10px auto;
     }
     
+}
+
+@media screen and (width >= 641px) and (width <= 820px) {
+
+    main{
+        display: block;
+    }
+
+    main section {
+        margin: 1rem auto;
+    }    
 }

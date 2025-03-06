@@ -79,7 +79,7 @@ const courses = [
 ];
 
 const coursesTab = document.querySelector('#coursesTabsContent');
-
+const coursesCredit = document.querySelector('#coursesTabsCredits');
 const displayAllCourses = (array) => {
     coursesTab.innerHTML = '';
     array.forEach((course) => { 
@@ -97,6 +97,12 @@ const displayAllCourses = (array) => {
         courseContainer.appendChild(courseContent);
         coursesTab.appendChild(courseContainer);
     });
+
+    const tc = array.reduce(function (acc, course) {
+        return acc + course.credits;
+    }, 0);
+    coursesCredit.innerHTML = `<span class="credits">Credits required: ${tc}</span>`;
+    // console.log(tc);
 };
 
 document.querySelector('.all').addEventListener('click', () => {
@@ -110,3 +116,5 @@ document.querySelector('.cse').addEventListener('click', () => {
 document.querySelector('.wdd').addEventListener('click', () => {
     displayAllCourses(courses.filter(course => course.subject === 'WDD'));
 });
+
+displayAllCourses(courses);
