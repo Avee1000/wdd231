@@ -88,7 +88,7 @@ const displayAllCourses = (array) => {
         courseContent.innerHTML = `${course.subject} ${course.number}`;
 
         if (course.completed === true) {
-            courseContainer.style.backgroundColor = 'rgba(132, 39, 11, 0.79)';
+            courseContainer.style.backgroundColor = 'rgb(101, 28, 6)';
             courseContainer.style.color = 'white';
         } else {
             courseContainer.style.backgroundColor = 'lightgrey'
