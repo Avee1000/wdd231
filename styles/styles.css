@@ -253,9 +253,9 @@ footer p {
         cursor: pointer;
     }
 
-    #menu i {
-        color: black;
-        font-size: 28px;
+    #menu svg {
+        /* color: black; */
+        height: 28px;
     }
 
     nav {
@@ -293,8 +293,8 @@ footer p {
         color: white;
     }
 
-    #close i {
-        font-size: 25px;
+    #close svg {
+        height: 28px;
     }
 
     nav>ul {
