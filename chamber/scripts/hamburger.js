@@ -1,7 +1,6 @@
-const mainNav = document.querySelector('.navigation');
 const hamburger = document.querySelector("#menu");
+const navigation = document.querySelector("nav");
 
 hamburger.addEventListener('click', () => {
-    mainNav.classList.toggle('show');
-    hamburger.classList.toggle('show');
+    navigation.classList.toggle('show');
 });
