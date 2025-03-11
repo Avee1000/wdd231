@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Osamagumwende Flourish Idahosa-Sunny" />
+    <meta
+            name="description"
+            content="Benncima Chamber of Commerce - Home" />
+    <meta property="og:title" content="Benncima Chamber of Commerce"/>
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://avee1000.github.io/wdd230/chamber/images/edo.jpg" />
+    <meta property="og:url" content="https://avee1000.github.io/wdd230/chamber/" />
+    <title>Chamber of Commerce and Discover</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <div id="content">
+        <header>
+            <a id="logo_link" href="index.html">
+                <img class='logo' src="images/white.webp" alt="Chamber logo">
+            </a>
+            <h1>Benncima Chamber of Commerce</h1>
+            <label class="switch">
+                <input type="checkbox" id="myCheckbox">
+                <span class="slider round"></span>
+            </label>
+        </header>
+
+        <a id="menu"></a>
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+
+    <main class="discover">
+
+        <h5>Discover Benin City</h5>
+        
+        <div class="left-sidebar">
+            <section>
+                <h2>Last Visit</h2>
+                <p id="last-visit"></p>
+            </section>
+
+            <section>
+                <h2>Population (2006)</h2>
+                <ul>
+                    <li>Total: 1,050,000</li>
+                    <li>Density: 870/km² (2,300/sq mi)</li>
+                    <li>Rank: 4th</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>GDP (PPP, 2015 int. Dollar)</h2>
+                <ul>
+                    <li>Year: 2023</li>
+                    <li>Total: $16.6 billion</li>
+                    <li>Per Capita: $8,700</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="right-sidebar">
+
+            <figure>
+                <picture>
+                    <!-- <source media="(max-width: 640px)" srcset="images/discover/art-small.webp">
+                    <source media="(max-width: 1000px)" srcset="images/discover/art-medium.webp"> -->
+                    <img src="images/discover/art-large.webp" alt="Art at its peak" width="1200" height="800" loading="lazy">
+                </picture>
+                <figcaption>Art at its peak</figcaption>
+            </figure>
+
+            <figure>
+                <picture>
+                    <!-- <source media="(max-width: 640px)" srcset="images/discover/business-small.webp">
+                    <source media="(max-width: 1000px)" srcset="images/discover/business-medium.webp"> -->
+                    <img src="images/discover/business-large.webp" alt="Land of oportunities" width="1200" height="800" loading="lazy">
+                </picture>
+                <figcaption>A land of opportunities</figcaption>
+            </figure>
+
+            <figure>
+                <picture>
+                    <!-- <source media="(max-width: 640px)" srcset="images/discover/farming-small.webp">
+                    <source media="(max-width: 1000px)" srcset="images/discover/farming-medium.webp"> -->
+                    <img src="images/discover/farming-large.webp" alt="Nuturing the roots of life" width="1200" height="800" loading="lazy">
+                </picture>
+                <figcaption>Nuturing the roots of life</figcaption>
+            </figure>
+
+            <figure>
+                <picture>
+                    <!-- <source media="(max-width: 640px)" srcset="images/discover/scaled-small.webp">
+                    <source media="(max-width: 1000px)" srcset="images/discover/scaled-medium.webp"> -->
+                    <img src="images/discover/scaled-large.webp" alt="Experience the passion of sports" width="1200" height="800" loading="lazy">
+                </picture>
+                <figcaption>Experience the passion of sports</figcaption>
+            </figure>
+
+            <figure>
+                <picture>
+                    <!-- <source media="(max-width: 640px)" srcset="images/discover/palace-small.webp">
+                    <source media="(max-width: 1000px)" srcset="images/discover/palace-medium.webp"> -->
+                    <img src="images/discover/palace-large.webp" alt="The royal palace of the oba of Benin" width="1200" height="800" loading="lazy">
+                </picture>
+                <figcaption>The royal palace of the oba of Benin</figcaption>
+            </figure>
+
+            <figure>
+                <picture>
+                    <!-- <source media="(max-width: 640px)" srcset="">
+                    <source media="(max-width: 1000px)" srcset=""> -->
+                    <img src="images/discover/museum-large.webp" alt="National museum in Benin-City" width="1200" height="800" loading="lazy">
+                </picture>
+                <figcaption>National museum of Benin-City</figcaption>
+            </figure>    
+        </div>
+
+    </main>
+
+        <footer>
+            <div id="logo-area">
+                <img class='logo' src="images/white.webp" alt="Chamber logo">
+                <p>Benncima Chamber of Commerce</p>
+            </div>
+
+            <div id="contact-area">
+                <p>Get In Touch</p>
+                <ul>
+                    <li>0810 040 5583</li>
+                    <li>info@benccima.org</li>
+                </ul>
+            </div>
+
+            <div id="project-area">
+                <p>&copy; 2024 - Osamagumwende Flourish Idahosa-Sunny</p>
+                <p>WDD230 Chamber Project</p>
+                <p id="last-modified">LAST MODIFIED: </p>
+            </div>
+        </footer>
+        
+        <script src="scripts/getdates.js"></script>
+        <script src="scripts/hamburger.js"></script>
+        <script src="scripts/darkmode.js"></script>
+
+
+    </div>
+</body>
+</html>

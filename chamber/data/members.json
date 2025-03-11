@@ -1,0 +1,60 @@
+{
+    "companies": [
+        {
+            "name": "Dangote Co.",
+            "address": "11 Benin Sapele Rd, Oka, Owerri 300102, Edo",
+            "phone": "+234 1 448 0816",
+            "url" : "https://dangote.com/",
+            "image": "images/directory/dangote.webp",
+            "memberLevel": "Gold"
+        },
+        {
+            "name": "First Bank",
+            "address": "1026, Kings Square, P.M.B, Ring Rd",
+            "phone": "+234 708 062 5000",
+            "url" : "https://www.firstbanknigeria.com/",
+            "image": "images/directory/firstbank.webp",
+            "memberLevel": "Gold"
+        },
+        {
+            "name": "Jumia LTD",
+            "address": "Onomek Laboratories, Oko, 239 Airport Rd, By, Benin City 300102, Edo",
+            "phone": "+234 201 888 1106",
+            "url" : "https://www.jumia.com.ng/",
+            "image": "images/directory/work.webp",
+            "memberLevel": "Silver"
+        },
+        {
+            "name": "Mat-Ice",
+            "address": "99 Ekenwan Road, Benin City",
+            "phone": "+234 0816 338 5534",
+            "url" : "https://maticefastfood.com/",
+            "image": "images/directory/matice.webp",
+            "memberLevel": "Bronze"
+        },
+        {
+            "name": "MTN",
+            "address": "89, Akpakpava Road, Benin City",
+            "phone": "+234 803 100 0300",
+            "url" : "https://www.mtn.ng/",
+            "image": "images/directory/mtn.webp",
+            "memberLevel": "Silver"
+        },
+        {
+            "name": "ShopRite",
+            "address": "18 Central Rd, Sapele Rd, beside NNPC,  Benin City",
+            "phone": "+234 1330 1700",
+            "url" : "https://shoprite.ng/",
+            "image": "images/directory/shoprite.webp",
+            "memberLevel": "Silver"
+        },
+        {
+            "name": "Oando PLC",
+            "address": "17a Ozumba Mbadiwe, Victoria Island, Lagos, Nigeria.",
+            "phone": "+234-1-2702400",
+            "url" : "https://www.oandoplc.com/",
+            "image": "images/directory/oando.webp",
+            "memberLevel": "Bronze"
+        }
+    ]
+}
