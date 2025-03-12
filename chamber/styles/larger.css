@@ -1,7 +1,5 @@
 /* //////////////////////////////////////////////////////////////////////// */
 @media screen and (min-width: 1000px){
-
-
     .switch{
         position: absolute;
         top: 1rem;
@@ -12,12 +10,13 @@
     }
 
     nav {
+        display: block;
         width: 95%;
         height: auto;
         border-radius: 10px;
     }
 
-    #menu{
+    #menu, #close{
         display: none;
     }
     
@@ -120,11 +119,6 @@
         grid-column:3/4;
         grid-row: 1/2;
         border-bottom: none;
-    }
-
-    .social{
-        grid-column: 1/4;
-        grid-row: 2/3;
     }
 
     .dark-mode {

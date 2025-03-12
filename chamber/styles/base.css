@@ -141,21 +141,13 @@ header h1 {
 
 #menu {
 	display: block;
-	font-weight:300;
-	text-decoration: none;
-	padding: .7rem;
-    background-color: #dad9d9;
-	color: black;
     cursor: pointer;
 }
 
-#menu::before {
-    /* content: "\f0c9"; */
-    content: "≡";
-    /* font-family: 'Font Awesome 6 Free'; */
-    color: black;
-    font-size: 2rem;
-    font-weight: 900; /*always use this after using font awesome unicodes */
+#close svg, #menu svg {
+    display: block;
+    height: 40px;
+    fill: white;
 }
 
 nav {
@@ -940,11 +932,15 @@ hr{
     #navigationAndLabelContainer {
         gap: 10px;
     }
-
-
-    #labelContainer {
-        place-items: center;
+    
+    .switch{
+        position: absolute;
+        display: inline-block;
+        width: 65px;
+        height: 35px;
+        margin-left: 20px;
     }
+
 
     header h1:not(.benncima){
         font-size: .9rem;
@@ -973,14 +969,23 @@ hr{
         left: 0;
     }
 
-    .navigation {
-        position: relative;
-        bottom: 30px;
+    #close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 1rem;
+        cursor: pointer;
     }
 
-    .show li {
+    .navigation {
+        position: relative;
+        bottom: 100px;
+    }
+
+    .navigation li {
         display: block;
         text-align: center;
+        margin: 1rem;
     }
 
     .navigation a {
@@ -1019,14 +1024,6 @@ hr{
         align-items: center;
     }
 
-    .switch{
-        position: absolute;
-        right: 1rem;
-        top: 2rem;
-        display: inline-block;
-        width: 65px;
-        height: 35px;
-    }
 
     .discover{
         margin: 2rem;
