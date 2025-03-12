@@ -1127,13 +1127,12 @@ hr{
         margin: 2rem;
     }
 
-    .grid  #card{
+    .grid  #cards{
         box-shadow: none;
-        background-color: red;
-    }
-
-    .grid #section-card{
-        margin: 0 2rem 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     
     .list #section-card{
