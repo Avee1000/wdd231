@@ -15,13 +15,15 @@ const displayMembers = (members) => {
 
         const section = document.createElement("section");
         section.setAttribute('id', 'section-card');
+
+        const logoContainer = document.createElement("div");
+        logoContainer.setAttribute('class', 'logo-container');
         
         const logo = document.createElement("img");
         logo.setAttribute('src', member.image);
         logo.setAttribute('alt', member.name);
         logo.setAttribute('loading', 'lazy');
-        logo.setAttribute('height', '150');
-        logo.setAttribute('width', '200');
+
 
         const companyName = document.createElement("h2");
         companyName.innerHTML = `${member.name}`;
@@ -38,12 +40,8 @@ const displayMembers = (members) => {
         companySite.setAttribute('target', '_blank')
         companySite.innerHTML = `${member.url}`
 
-        if (member.name == "Oando PLC") {
-            logo.style.height = "100px";
-            logo.style.width = "230px";
-        }
-
-        section.append(logo, companyName, companyAddress, companyPhone, companySite);
+        logoContainer.appendChild(logo);
+        section.append(logoContainer, companyName, companyAddress, companyPhone, companySite);
         cards.appendChild(section);
     });
 }
