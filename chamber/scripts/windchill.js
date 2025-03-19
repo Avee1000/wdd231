@@ -15,11 +15,8 @@
 // let windChill = windchill(newTemperature, newSpeed);
 // chill.innerHTML += windChill.toFixed() + `&deg;F`;
 
-const currentTemp = document.getElementById('current-temp');
-
-const currentDesc = document.getElementById('description');
-
-const div = document.querySelector('#more-info');
+const weatherImage = document.querySelector('.currentWeatherImage');
+const weatherInformation = document.querySelector('.currentWeatherInformation');
 
 const url = "https://api.openweathermap.org/data/2.5/forecast?lat=6.32691&lon=5.60750&units=imperial&APPID=61a0af6c0abff327e78c6ce5bfbb578c";
 
@@ -29,7 +26,6 @@ async function apiFetch() {
         if (response.ok) {
             const data = await response.json();
             displayWeather(data);
-
         } else {
             throw Error(await response.text());
         }
@@ -43,28 +39,21 @@ apiFetch();
 function displayWeather(data) {
 
     const weather = data.list[0];
-
     const iconsrc = `https://openweathermap.org/img/w/${weather.weather[0].icon}.png`;
     const weatherIcon = document.createElement('img');
     weatherIcon.setAttribute('src', iconsrc);
     weatherIcon.setAttribute('alt', "weather");
-    weatherIcon.setAttribute('width', '50px');
-    weatherIcon.setAttribute('height', '50px');
-    document.querySelector('.info').appendChild(weatherIcon);
+    weatherIcon.setAttribute('width', '100px');
+    weatherIcon.setAttribute('height', '100px');
+    weatherImage.appendChild(weatherIcon);
 
-    currentTemp.innerHTML = `${weather.main.temp.toFixed(0)}&deg;F`;
+    const weatherInfoUl = document.querySelector('.currentWeatherInformation ul');
 
-    const desc = weather.weather[0].description;
-
-    currentDesc.innerHTML = `- ${desc.charAt(0).toUpperCase() + desc.slice(1)}`;
-
-    const humidity = document.createElement('p');
-    humidity.innerHTML = `Humidity: ${weather.main.humidity}%`;
-    div.appendChild(humidity);
-
-    const windSpeed = document.createElement('p');
-    windSpeed.innerHTML = `Wind Speed: ${weather.wind.speed}km/h`;
-    div.appendChild(windSpeed);
+    weatherInfoUl.innerHTML = `<li class="degree">${weather.main.temp.toFixed(0)}&deg;F</li>
+    <li>${weather.weather[0].description.charAt(0).toUpperCase() + weather.weather[0].description.slice(1)}</li>
+    <li>High: ${weather.main.temp_max.toFixed(0)}&deg;</li>
+    <li>Low: ${weather.main.temp_min.toFixed(0)}&deg;</li>
+    <li>Humidity: ${weather.main.humidity}%;</li>`;
 
 
     //FORECAST FOR 3 DAYS
@@ -100,7 +89,7 @@ function displayWeather(data) {
 
         section.append(date, dayTemp, forecastIcon, dayDesc);
         document.querySelector('#forecast').appendChild(section);
-        
     }); 
 
 }
+
