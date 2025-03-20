@@ -69,8 +69,11 @@ function displayRanMembers(companies) {
         
         const url = document.createElement("p");
         url.innerHTML = `<strong>URL:</strong> <a href="${x.url}" target="_blank">${x.url}</a>`;
+
+        const membership = document.createElement("p");
+        membership.innerHTML = `<strong>MEMBERSHIP LEVEL:</strong> ${x.memberLevel}`;
  
-        spotAdDesc.append(address, phone, url);
+        spotAdDesc.append(address, phone, url, membership);
         businessDesc.append(spotAdImage, spotAdDesc);
 
         article.append(businessName, businessDesc);

@@ -1111,6 +1111,7 @@ hr{
         height: auto;
         object-fit: cover;
     }
+    
 
     #hero-box {
         position: relative;
@@ -1125,6 +1126,7 @@ hr{
     }
 
     #pageTitle, #cardSection, #spotlight {
+        font-size: calc(100% / 1.2);
         width: 80%;
     }
 
