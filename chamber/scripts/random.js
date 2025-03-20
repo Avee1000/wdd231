@@ -40,31 +40,40 @@ function displayRanMembers(companies) {
         
         const x = needed[index];
         const article = document.createElement("article");
+        article.classList.add('spotAdArticle');
 
-        const name = document.createElement("h3");
-        name.innerHTML = `${x.name}`;
+        const businessName = document.createElement('div');
+        businessName.classList.add('businessName');
+        businessName.innerHTML = `<h3>${x.name}</h3>`;
 
+        const businessDesc = document.createElement('div');
+        businessDesc.classList.add('businessDesc');
+        const spotAdImage = document.createElement('div');
+        spotAdImage.classList.add('spotAdImage');
         const logo = document.createElement("img");
         logo.setAttribute('src', x.image);
         logo.setAttribute('alt', x.name);
         logo.setAttribute('loading', 'lazy');
-        // logo.setAttribute('height', '50');
-        // logo.setAttribute('width', '80');
-        logo.classList.add('thumbnail'); // Apply a class for styling
+        logo.setAttribute('height', '100px');
+        logo.setAttribute('width', '100px');
+        logo.classList.add('thumbnail'); 
+        spotAdImage.appendChild(logo);
 
-        
+        const spotAdDesc = document.createElement('div');
+        spotAdDesc.classList.add('spotAdDesc');
         const address = document.createElement("p");
-        address.innerHTML = `${x.address}`;
+        address.innerHTML = `<strong>EMAIL:</strong> info@gmail.com`;
 
         const phone = document.createElement("p");
-        phone.innerHTML = `${x.phone}`
+        phone.innerHTML = `<strong>PHONE:</strong> ${x.phone}`
         
-        const url = document.createElement("a");
-        url.innerHTML = `${x.url}`;
-        url.setAttribute('href', x.url)
-        url.setAttribute('target', '_blank')       
+        const url = document.createElement("p");
+        url.innerHTML = `<strong>URL:</strong> <a href="${x.url}" target="_blank">${x.url}</a>`;
+ 
+        spotAdDesc.append(address, phone, url);
+        businessDesc.append(spotAdImage, spotAdDesc);
 
-        article.append(name, logo, address, phone, url );
+        article.append(businessName, businessDesc);
         spotlight.appendChild(article);
     });
         

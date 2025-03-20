@@ -267,14 +267,16 @@ main, #pageTitle {
 }
 
 main.blog-home-grid{
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    grid-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
     height: auto;
+    margin: 0 auto 2rem auto;
 }
 
 #pageTitle {
-    width: 95%;
+    width: 100%;
     margin: 1.5rem auto;
 }
 
@@ -283,6 +285,7 @@ main.blog-home-grid{
     align-items: center;
     justify-content: center;
     height: 100%;
+    margin: auto 0;
 }
 
 #currentWeatherContainer ul li {
@@ -315,6 +318,12 @@ h4{
     font-family: var(--paragraph-font);
 }
 
+#cardSection {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
 
 section.card {
     background-color: var(--accent1-color);
@@ -323,10 +332,8 @@ section.card {
     align-items: center;
     transition: transform 1s;
     position: relative;
-    overflow: hidden;
     text-align: center;
     margin: 0 auto;
-    width: 90%;
     border-radius: 7px;
     box-shadow: 5px 5px 10px rgb(92, 92, 92);
 }
@@ -376,13 +383,8 @@ section.card {
     padding: 1.5rem;
 }
 
-.card h3{
-    padding: 2rem 1rem 1rem 1rem;
-    font-family: var(--paragraph-font);
-}
 
-
-.info{
+/* .info{
     display: flex;
     flex-direction: row-reverse;
     text-align: center;
@@ -398,7 +400,7 @@ section.card {
 
 #more-info P{
     margin: 0 0 1rem 0;
-}
+} */
 
 #forecast h3{
     font-family: var(--paragraph-font);
@@ -409,38 +411,65 @@ section.card {
     position: relative;
     text-align: center;
     margin: 25px auto;
-    width: 90%;
+    width: 100%;
     border-radius: 7px;
     background-color: var(--primary-color);
-    box-shadow: 5px 5px 10px rgb(92, 92, 92);
 }
 
-#spotlight h2{
-    color: var(--accent2-color);
-    background-color: var(--accent1-color);
-    font-size: 40px;
+#spot-ad {
+    display: flex;
+    gap: 40px;
 }
 
-#spot-ad article{
-    background-color: #fffefec2;
-    color: var(--accent2-color);
-    border-radius: 10px;
+.spotAdArticle {
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
     box-shadow: 1px 1px 10px 2px rgb(33, 33, 33);
-    position: relative;
+    border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    margin: 1rem;
-    width: 90%;
+    width: 100%;
+}
+
+.spotAdArticle h3{
+    font-family: var(--paragraph-font);
+    font-size: 1.2rem;
+}
+
+.businessName {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.244);
     padding: 1rem 0;
 }
 
-#spot-ad article h3{
-    font-family: var(--paragraph-font);
-    padding: 1rem;
+.businessDesc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    gap: 10px;
+    padding: 1rem 0;
 }
 
-#spot-ad article p{
-    padding: .2rem 1rem;
+.spotAdImage {
+    width: 100px;
+    height: 100px;
+}
+
+.spotAdImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.spotAdDesc p{
+    text-align: left;
+}
+
+.businessDesc a{
+    text-decoration: none;
+    color: black;
 }
 
 footer {
@@ -1083,17 +1112,31 @@ hr{
         object-fit: cover;
     }
 
-    .card:not(.card:nth-of-type(3)){
+    #hero-box {
+        position: relative;
+        display: block;
+    }
+
+    .heroLinkContainer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 4rem;
+    }
+
+    #pageTitle, #cardSection, #spotlight {
         width: 80%;
     }
 
-    .card:nth-of-type(3){
-        width: 90%;
+    section.card {
+        width: 100%;
+        min-height: 300px;
+        max-height: 500px;
     }
 
-    #spotlight{
-        height: auto;
-        margin: 3rem auto;
+    #spotlight, #cardSection {
+        flex-direction: column;
+        margin: 0 auto;
     }
 
     #spot-ad{
@@ -1101,7 +1144,6 @@ hr{
         flex-direction: column;
         align-items: center;
     }
-
 
     .discover{
         margin: 2rem;

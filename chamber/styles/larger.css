@@ -79,17 +79,20 @@
         background-color: var(--primary-color);
     }
 
-    #spotlight{
-        grid-column: 1/4;
+    #cardSection > :first-child {
+        flex: 2;
     }
+    
+    #cardSection > :nth-child(2),
+    #cardSection > :nth-child(3) {
+        flex: 1;
+    }
+    
+
 
     #spotlight h2{
         display: block;
         width: 100%;
-    }
-
-    #spot-ad{
-        display: flex;
     }
 
     footer{
