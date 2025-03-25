@@ -37,12 +37,12 @@ const closeLearnMore = document.querySelectorAll(".closeButton");
 
 learnMore.forEach((button) => {
     button.addEventListener("click", () => {
-        document.getElementById("modal").showModal();
+        document.querySelector(".modal").showModal();
     });
 });
 
 closeLearnMore.forEach((button) => {
     button.addEventListener("click", () => {
-        document.getElementById("modals").close();
+        document.querySelector(".modal").close();
     });
 });
