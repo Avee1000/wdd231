@@ -43,6 +43,6 @@ learnMore.forEach((button) => {
 
 closeLearnMore.forEach((button) => {
     button.addEventListener("click", () => {
-        document.getElementById("modal").close();
+        document.getElementById("modals").close();
     });
 });
