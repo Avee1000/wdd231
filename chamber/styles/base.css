@@ -890,7 +890,51 @@ hr{
     opacity: 1;
 }
 
-.wrapper {
+
+
+dialog.modal {
+    border: 1px solid rgb(0 0 0 / 0.1);
+    border-radius: .25rem;
+    padding: 3rem;
+    background-color: #fff;
+    box-shadow: 0 0 3rem #777;
+    width: 80ch;
+    border: none;
+    text-align: center;
+    margin: auto;
+}
+  
+.modal::backdrop {
+    background-color: rgb(0 0 0 / 0.5);
+}
+
+.closeButton {
+    margin: 3rem auto 0 auto;
+    display: block;
+    width: 30%;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: orange;
+    padding: .8rem 0;
+    border-radius: 10px;
+    outline: none;
+    font-weight: 500;
+    transition: .3s ease-in-out;
+}
+
+.closeButton::after {
+    position: absolute;
+    content: "\25B2";
+    padding-left: 5px;
+}
+
+.closeButton:hover {
+    background-color: rgb(255, 140, 0);
+}
+  
+
+/* .wrapper {
     position: relative;
     margin: 2rem 1rem;
 }
@@ -903,13 +947,11 @@ hr{
 
 .listContainer.show {
     max-height: 500px;
-}
+} 
 
 #right-side a.show::after {
     content: "\25B2";
-
-
-}
+}*/
 
 
 .dark-mode #right-side h1,

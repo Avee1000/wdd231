@@ -76,8 +76,6 @@
     
                 </fieldset> 
     
-                <!-------------------------------- MEMBERSHIP -------------------------------------->
-
                 <fieldset>
                     <legend>Membership Information</legend>
                     <div class="memInfo">Membership Level</div>
@@ -97,7 +95,7 @@
                     placeholder="Enter a description of your Business/Organization" spellcheck="true" ></textarea></label>
 
                     <label>Timestamp
-                        <input type="hidden" id="timestamp" name="timestamp" required></label>
+                        <input type="hidden" id="timestamp" name="timestamp">
                     </label>
                 </fieldset>                     
 
@@ -112,14 +110,15 @@
                 <section>
                     <h1>NP Membership (Non-Profit)</h1>
                     <div class="listContainer">
-                        <div class="wrapper">
+                        <dialog class="modal" id="modal">
                             <Span>Cost: Free</Span>
                             <ul class="list">
                                 <li>Access to networking events with other non-profit organizations.<hr></li>
                                 <li>Free or discounted participation in workshops and training sessions.<hr></li>
                                 <li>Inclusion in the organization's directory for increased visibility.<hr></li>
                             </ul>
-                        </div>
+                            <button class="closeButton" aria-label="show Less">Show Less</button>
+                        </dialog>
                     </div>
                     <a aria-label="Learn More" class="learnMore">Learn More</a>
                 </section>
@@ -127,14 +126,15 @@
                 <section>
                     <h1>Bronze Membership</h1>
                     <div class="listContainer">
-                        <div class="wrapper">
+                        <dialog class="modal" id="modal">
                             <Span>Cost: $250 per year</Span>
                             <ul class="list">
                                 <li>Basic advertising opportunities on the organization's website or newsletter. <hr></li>
                                 <li>10% discount on event registrations.<hr></li>
                                 <li>Quarterly members-only webinar on industry trends and best practices.<hr></li>
                             </ul>
-                        </div>
+                            <button class="closeButton" aria-label="show Less">Show Less</button>
+                        </dialog>
                     </div>
                     <a aria-label="Learn More" class="learnMore">Learn More</a>
                 </section>
@@ -142,7 +142,7 @@
                 <section>
                     <h1>Silver Membership</h1>
                     <div class="listContainer">
-                        <div class="wrapper">
+                        <dialog class="modal" id="modal">
                             <Span>Cost: $500 per year</Span>
                             <ul class="list">
                                 <li>Enhanced advertising exposure on the organization's website, newsletter, and social media.<hr></li>
@@ -150,7 +150,8 @@
                                 <li>Monthly members-only webinars covering specific topics in-depth.<hr></li>
                                 <li>Priority access to limited-capacity events.<hr></li>
                             </ul>
-                        </div>
+                            <button class="closeButton" aria-label="show Less">Show Less</button>
+                        </dialog>
                     </div>
                     <a aria-label="Learn More" class="learnMore">Learn More</a>
                 </section>
@@ -158,7 +159,7 @@
                 <section>
                     <h1>Gold Membership</h1>
                     <div class="listContainer">
-                        <div class="wrapper">
+                        <dialog class="modal" id="modal">
                             <Span>Cost: $1000 per year</Span>
                             <ul class="list">
                                 <li>Premium advertising slots on the organization's website, newsletter, and social media.<hr></li>
@@ -167,7 +168,8 @@
                                 <li>Priority access to limited-capacity events.<hr></li>
                                 <li>Priority access to all events, workshops, and training sessions.<hr></li>
                             </ul>
-                        </div>
+                            <button class="closeButton" aria-label="show Less">Show Less</button>
+                        </dialog>
                     </div>
                     <a aria-label="Learn More" class="learnMore">Learn More</a>
                 </section>
