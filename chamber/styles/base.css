@@ -899,7 +899,7 @@ dialog.modal {
     border-radius: .25rem;
     padding: 3rem;
     background-color: #fff;
-    box-shadow: 0 0 3rem #777;
+    box-shadow: 0 0 1rem #777;
     width: 80ch;
     border: none;
     text-align: center;
@@ -917,7 +917,7 @@ dialog.modal {
 }
   
 .modal::backdrop {
-    background-color: rgb(0 0 0 / 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .closeButton {
@@ -1376,11 +1376,6 @@ dialog.modal {
         padding: 1rem;
         font-size: calc(100% - .3rem);
     }
-
-    dialog > * {
-        font-size: calc(100% - .2rem);
-    }
-
   
     ul.list li{
         /* display: inline-block; */
@@ -1391,6 +1386,9 @@ dialog.modal {
         word-break: keep-all;
     }
 
+    .closeButton {
+        font-size: calc(100% / 1.2);
+    }
 
 
     /*-------------------------------DIRECTORY-------------------------------------*/
