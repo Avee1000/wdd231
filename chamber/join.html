@@ -94,9 +94,7 @@
                     <textarea name="businessDesc" cols="30" rows="6" id="businessDesc" 
                     placeholder="Enter a description of your Business/Organization" spellcheck="true" ></textarea></label>
 
-                    <label>Timestamp
-                        <input type="hidden" id="timestamp" name="timestamp">
-                    </label>
+                    <input type="hidden" id="timestamp" name="timestamp">
                 </fieldset>                     
 
                 <div class="button"><input type="submit" value="Create My Account" id="submit"> </div>                    
@@ -113,9 +111,9 @@
                         <dialog class="modal">
                             <Span>Cost: Free</Span>
                             <ul class="list">
-                                <li>Access to networking events with other non-profit organizations.<hr></li>
-                                <li>Free or discounted participation in workshops and training sessions.<hr></li>
-                                <li>Inclusion in the organization's directory for increased visibility.<hr></li>
+                                <li>Access to networking events with other non-profit organizations.</li>
+                                <li>Free or discounted participation in workshops and training sessions.</li>
+                                <li>Inclusion in the organization's directory for increased visibility.</li>
                             </ul>
                             <button class="closeButton" aria-label="show Less">Show Less</button>
                         </dialog>
@@ -129,9 +127,9 @@
                         <dialog class="modal">
                             <Span>Cost: $250 per year</Span>
                             <ul class="list">
-                                <li>Basic advertising opportunities on the organization's website or newsletter. <hr></li>
-                                <li>10% discount on event registrations.<hr></li>
-                                <li>Quarterly members-only webinar on industry trends and best practices.<hr></li>
+                                <li>Basic advertising opportunities on the organization's website or newsletter. </li>
+                                <li>10% discount on event registrations.</li>
+                                <li>Quarterly members-only webinar on industry trends and best practices.</li>
                             </ul>
                             <button class="closeButton" aria-label="show Less">Show Less</button>
                         </dialog>
@@ -145,10 +143,10 @@
                         <dialog class="modal">
                             <Span>Cost: $500 per year</Span>
                             <ul class="list">
-                                <li>Enhanced advertising exposure on the organization's website, newsletter, and social media.<hr></li>
-                                <li>15% discount on event registrations.<hr></li>
-                                <li>Monthly members-only webinars covering specific topics in-depth.<hr></li>
-                                <li>Priority access to limited-capacity events.<hr></li>
+                                <li>Enhanced advertising exposure on the organization's website, newsletter, and social media.</li>
+                                <li>15% discount on event registrations.</li>
+                                <li>Monthly members-only webinars covering specific topics in-depth.</li>
+                                <li>Priority access to limited-capacity events.</li>
                             </ul>
                             <button class="closeButton" aria-label="show Less">Show Less</button>
                         </dialog>
@@ -162,11 +160,11 @@
                         <dialog class="modal">
                             <Span>Cost: $1000 per year</Span>
                             <ul class="list">
-                                <li>Premium advertising slots on the organization's website, newsletter, and social media.<hr></li>
-                                <li>20% discount on event registrations.<hr></li>
-                                <li>Access to an annual weekend retreat or conference at a discounted rate.<hr></li>
-                                <li>Priority access to limited-capacity events.<hr></li>
-                                <li>Priority access to all events, workshops, and training sessions.<hr></li>
+                                <li>Premium advertising slots on the organization's website, newsletter, and social media.</li>
+                                <li>20% discount on event registrations.</li>
+                                <li>Access to an annual weekend retreat or conference at a discounted rate.</li>
+                                <li>Priority access to limited-capacity events.</li>
+                                <li>Priority access to all events, workshops, and training sessions.</li>
                             </ul>
                             <button class="closeButton" aria-label="show Less">Show Less</button>
                         </dialog>
@@ -207,6 +205,7 @@
                     let lastMod = new Date(document.lastModified);
 
                     modified.innerHTML += lastMod;
+                    document.getElementById('timestamp').value = new Date().toLocaleString();
                 </script>
             </div>
         </footer>

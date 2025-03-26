@@ -805,12 +805,6 @@ textarea{
     font-size: 1.3em;
 }
 
-hr{
-    /* width: 3rem; */
-    color: black;
-    border: 1px solid black;
-}
-
 #right-side section{
     position: relative;
     background-color: rgb(219, 219, 219);
@@ -856,7 +850,15 @@ hr{
 
 #right-side ul.list li{
     list-style-type: none;
-    margin: 1rem 0;
+    margin: 2rem 0;
+    padding: 1rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 100;
+    color: rgb(75, 75, 75);
+    border: 3px solid black;
+    border-radius: 20px;
+    letter-spacing: -1px;
 }
 
 #right-side a{
@@ -902,6 +904,16 @@ dialog.modal {
     border: none;
     text-align: center;
     margin: auto;
+    animation: show .5s ease-in-out forwards;
+}
+
+@keyframes show {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }
   
 .modal::backdrop {
@@ -974,26 +986,32 @@ dialog.modal {
 #record-main{
     height: auto;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    max-width: 70vw;
+    margin: 5rem auto;
 }
 
 .recordmsg{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    border: 2px solid black;
-    width: 90%;
-    border-radius: 7px;
-    font-family: "Cambria", Georgia, Times, serif;
     font-size: 30px;
     font-weight: 700;
     padding: 1rem;
+    border-bottom: 3px solid rgb(255, 119, 0);
 }
+
+.applicantInfo {
+    margin: 2rem auto;
+}
+
+.applicantInfo p {
+    margin: .5rem 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: -1px;
+    font-style: italic;
+    font-weight: 100;
+    color: #444444;
+    font-size: 1.2rem;
+}
+
+
 
 .dark-mode .recordmsg{
     border: 2px solid white;
@@ -1356,8 +1374,11 @@ dialog.modal {
         border-radius: 6px;
         margin: 2rem 1rem;
         padding: 1rem;
-        box-shadow: 2px 2px 6px 1px inset rgb(74, 73, 73) ;
-        font-size: larger;
+        font-size: calc(100% - .3rem);
+    }
+
+    dialog > * {
+        font-size: calc(100% - .2rem);
     }
 
   
