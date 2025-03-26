@@ -1,0 +1,63 @@
+/* //////////////////////////////////////////////////////////////////////// */
+@media screen and (min-width: 1000px){
+    .switch{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        display: inline-block;
+        width: 65px;
+        height: 35px;
+    }
+
+    nav {
+        display: block;
+        width: 95%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    #menu, #close{
+        display: none;
+    }
+    
+    .navigation{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+    }
+
+
+    .navigation li{
+        display: flex;
+        align-items: center;
+        padding: .8rem 1rem;
+        font-weight: 200;
+    }
+
+    .navigation a {
+        position: relative;
+        /* border-bottom: 2px solid transparent; 
+        padding-bottom: 5px; 
+        transition: border-bottom 0.7s ease; */
+    }
+
+
+    .navigation a:not(.active)::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px; 
+        transition: width 0.5s ease; 
+        background-color: white;
+        margin-top: 13px;
+    }
+
+    .navigation a:hover::before {
+        width: 100%;
+    }
+
+
+}

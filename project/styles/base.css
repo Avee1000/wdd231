@@ -1,0 +1,243 @@
+@font-face {
+font-family: Thicccboi;
+src: url('https://cdn.prod.website-files.com/610611d7a1cb344c65731c96/610611d8a1cb3483fe731cd1_THICCCBOI-ExtraBold.woff2') format('woff2');
+font-weight: 700;
+font-style: normal;
+font-display: auto;
+}
+
+@font-face {
+font-family: Thicccboi;
+src: url('https://cdn.prod.website-files.com/610611d7a1cb344c65731c96/610611d8a1cb3455c6731cc6_THICCCBOI-SemiBold.woff2') format('woff2');
+font-weight: 400;
+font-style: normal;
+font-display: auto;
+}
+
+@font-face {
+font-family: Thicccboi;
+src: url('https://cdn.prod.website-files.com/610611d7a1cb344c65731c96/610611d8a1cb34468a731cd0_THICCCBOI-Bold.woff2') format('woff2');
+font-weight: 600;
+font-style: normal;
+font-display: auto;
+}
+
+@font-face {
+font-family: Thicccboi;
+src: url('https://cdn.prod.website-files.com/610611d7a1cb344c65731c96/610611d8a1cb3487d6731cd2_THICCCBOI-Medium.woff2') format('woff2');
+font-weight: 300;
+font-style: normal;
+font-display: auto;
+}
+
+:root {
+    --secondary: #6A994E;
+    --background: #FFF8F0;
+    --card-bg: #ffffff;
+    --text-main: #2E2E2E;
+    --text-muted: #6C757D;
+    --border: #DADADA;
+    --highlight: #ff9100;
+
+    --darkBackground: #1F1F1F;
+    --dark-card-bg: #2A2A2A;
+    --dark-text-main: #FFFFFF;
+    --dark-text-muted: #AAAAAA;
+    --dark-border: #333333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Thicccboi";
+}
+
+header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to bottom,rgba(0,0,0,1) 0,rgba(0,0,0,0) 100%);
+}
+
+header::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: block;
+    background: none 0 0 no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#logoAndNavigationContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    margin: 0 1rem;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+}
+
+#logo_link {
+    width: 70px;
+    height: 70px;
+}
+
+.logo{
+    filter: brightness(0) invert(1); /* Makes dark logo very white */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding-bottom: .5rem;
+}
+
+.dishdash {
+    font-size: clamp(.5rem, 5vw, 2rem);
+    color: white;
+    font-weight: 400;
+}
+
+#navigationAndLabelContainer {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    margin: auto 0;
+}
+
+#navigationContainer {
+    margin: auto 0;
+}
+
+#menu {
+	display: block;
+    cursor: pointer;
+}
+
+#close svg, #menu svg {
+    display: block;
+    height: 40px;
+    fill: white;
+}
+
+nav {
+    display: none;
+}
+
+.navigation{
+    list-style: none;
+    margin: auto;
+    padding: 0;
+}
+
+.navigation a{
+    text-decoration: none;
+    font-family: var(--heading-font);
+    display: block;
+    transition: 0.5s;
+    font-size: 1rem;
+    padding: 13px;
+    cursor: pointer;    
+    color: white;
+}
+
+.navigation li {
+	display: none;
+}
+
+a.active {
+    color:var(--highlight) ;
+    font-size: calc(100% / 1.2);
+    border: 2px solid #ff9100;
+    border-radius: 40px;
+}
+
+.heroContainer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -70px;
+    height: 160px;
+    text-align: center;
+    /* z-index: 1000; */
+}
+
+.heroText h2{
+    max-width: 90%;
+    margin: 0 auto;
+    color: white;
+    font-size: clamp(1rem, 6vw, 4rem);
+    font-weight: 900;
+}
+
+.heroText p{
+    max-width: 90%;
+    margin: 0 auto;
+    color: var(--highlight);
+    font-size: clamp(.5rem, 3vw, 2rem);
+    font-weight: 200;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    letter-spacing: -2px;
+}
+
+.learn-more {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(.5rem, .7rem, 1rem);
+    font-weight: lighter;
+    color: #fff;
+    z-index: 1000;
+    text-shadow: 0 0 5px rgba(0,0,0,0.75);
+    animation: opacity 1s linear forwards;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 100ms linear;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+        transform: scale(.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.learn-more::after {
+    content: "";
+    display: block;
+    background-image: url("../images/caret-down-solid.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    height: 16px;
+    width: 100%;
+    margin: 0 auto;
+    filter: invert(1);
+    animation: unset;
+}
+
