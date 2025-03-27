@@ -80,10 +80,39 @@ header::before{
 }
 
 #logoAndNavigationContainer {
+    position: fixed;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 100px;
-    margin: 0 1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%; 
+    padding: 0 2rem;
+}
+
+.static {
+    background-color: rgba(0, 0, 0, 0.976);
+    transition: all .7s ease-in-out;
+    z-index: 1;
+}
+
+.static #logo {
+    margin-left: 2rem;
+    transform: scale(.9);
+    transition: all .5s ease-in-out;
+}
+
+.remove-static {
+    background-color: rgba(0, 0, 0, 0);
+    transition: .5s ease-in-out;
+}
+
+.remove-static #logo {
+    margin-left: 0;
+    transform: scale(1);
+    transition: all .5s ease-in-out;
 }
 
 #logo {
@@ -196,7 +225,7 @@ a.active {
     font-weight: 200;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
 }
 
 .learn-more {
@@ -208,12 +237,10 @@ a.active {
     font-size: clamp(.5rem, .7rem, 1rem);
     font-weight: lighter;
     color: #fff;
-    z-index: 1000;
     text-shadow: 0 0 5px rgba(0,0,0,0.75);
     animation: opacity 1s linear forwards;
     text-decoration: none;
     cursor: pointer;
-    transition: opacity 100ms linear;
 }
 
 @keyframes opacity {
@@ -240,4 +267,5 @@ a.active {
     filter: invert(1);
     animation: unset;
 }
+
 
