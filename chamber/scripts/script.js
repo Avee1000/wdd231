@@ -11,17 +11,17 @@ myInfo.forEach((value, key) => {
     console.log(key, value);
 });
 
-applicantInfo.innerHTML = `<p>Application for: <b>${myInfo.get("firstname")} ${myInfo.get("lastname")}</p>
-<p>The name of your Organization is <b>${myInfo.get("title")}</p>
-<p>Your email is <b>${myInfo.get("email")}</p>
+applicantInfo.innerHTML = `<p><strong>First name:</strong> ${myInfo.get("firstname")}</p>
 <br>
-<p>Your phone number is <b>${myInfo.get("phone")}</p>
-<p>Your preferred membership is <b>${myInfo.get("membership").toUpperCase()}</p>
+<p><strong>Last name:</strong> ${myInfo.get("lastname")}</p>
 <br>
-<p>The name of your business is <b>${myInfo.get("business")}</p>
+<p><strong>Email address:</strong> ${myInfo.get("email")}</p>
 <br>
-<p>Your Business Description: <b>${myInfo.get("businessDesc")}</p>
-<p>Your Registration timpstamp is <b>${myInfo.get("timestamp")}</p>`;
+<p><strong>Phone number:</strong> ${myInfo.get("phone")}</p>
+<br>
+<p><strong>Business name:</strong> ${myInfo.get("business")}</p>
+<br>
+<p><strong>Date of  Submission:</strong> ${myInfo.get("timestamp")}</p>`;
 // for (const [key, value] of myInfo.entries()) {
 //     if ( key === "businessDesc") {
 //         applicantInfo.innerHTML += ``;

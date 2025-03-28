@@ -990,11 +990,20 @@ dialog.modal {
     margin: 5rem auto;
 }
 
+.recordmsg * {
+    margin: 1.5rem 0;
+}
+
 .recordmsg{
     font-size: 30px;
     font-weight: 700;
     padding: 1rem;
     border-bottom: 3px solid rgb(255, 119, 0);
+}
+
+.recordmsg p {
+    font-size: clamp(1rem, 1.5rem, 2rem);
+    font-weight: 300;
 }
 
 .applicantInfo {
@@ -1006,6 +1015,7 @@ dialog.modal {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     letter-spacing: -1px;
     font-style: italic;
+    text-align: left;
     font-weight: 100;
     color: #444444;
     font-size: 1.2rem;
