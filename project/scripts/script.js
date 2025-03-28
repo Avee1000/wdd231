@@ -28,8 +28,6 @@ let lastScroll = window.scrollY;
 
 window.addEventListener('scroll', () => {
     const s = window.scrollY;
-    console.log(s);
-
     navContainer.classList.toggle('static', s > 0);
     navContainer.classList.toggle('remove-static', s < 30);
     // lastScroll = currentScroll;
@@ -53,3 +51,15 @@ ms.addEventListener('click', () => {
 // });
 
 // observer.observe(target);
+
+const searchButton = document.querySelector('.search');
+searchButton.addEventListener('click', () => {
+  document.querySelector('#searchBoxContainer').classList.add('searchActive');
+  document.body.style.overflow = 'hidden';
+})
+
+const closeSearchButton = document.querySelector('.close');
+closeSearchButton.addEventListener('click', () => {
+  document.querySelector('#searchBoxContainer').classList.remove('searchActive');
+  document.body.style.overflow = '';
+})
