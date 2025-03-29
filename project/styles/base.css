@@ -93,6 +93,7 @@ header::before{
     margin: 0 auto;
     width: 100%; 
     padding: 0 2rem;
+    z-index: 10;
 }
 
 .static {
@@ -392,7 +393,7 @@ a.active {
   }
 
   .welcome-content span:not(.brand) {
-    padding: .2rem;
+    padding: .1rem;
     color: rgba(0, 0, 0, 0.762);
     font-weight: bold;
     border-radius: 20px;
@@ -417,7 +418,7 @@ a.active {
 
 /* FEATURED RECIPE SECTION */
   .featured-recipes {
-    margin: 2rem auto;
+    margin: 3rem auto;
   }
   
   .featured-recipes h2 {
@@ -455,7 +456,7 @@ a.active {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 100;
+    z-index: 1;
   }
 
   .recipe-card img {
@@ -465,7 +466,7 @@ a.active {
   }
   
   .recipeContainer {
-    background-color: #71d5370e;
+    background-color: #71d53726;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -507,11 +508,98 @@ a.active {
     text-decoration: none;
     font-weight: 500;
     transition: background-color 0.3s ease;
+    cursor: pointer;
   }
   
   .view-recipe-btn:hover {
     background-color: #7bb15e;
   }
+
+/* MODAL SECTION */
+  dialog.modal {
+    border: 1px solid rgb(0 0 0 / 0.1);
+    border-radius: .25rem;
+    padding: 2rem 5rem;
+    background-color: #fff;
+    width: 100ch;
+    max-height: 50dvh;
+    outline: none;
+    text-align: left;
+    margin: auto;
+    animation: show .5s ease-in-out forwards;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+  .modal.closing {
+    animation: fadeOut 0.2s ease-in-out forwards;
+  }
+
+@keyframes show {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: scale(1);
+  }
+  to {
+      opacity: 0;
+      transform: scale(0.5);
+  }
+}
+  
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.97);
+}
+
+.modal h3 {
+  position: relative;
+  right: 10px;
+  margin-bottom: 1rem;
+}
+
+.modal h3::before {
+    content: "";
+    height: 100%;
+    width: 10px;
+    background-color: var(--highlight);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    left:-15px;
+    border-radius: 10px;
+}
+.instructionsContainer h3::before {
+  background-color: var(--secondary);
+}
+
+.modal>div>ul>li {
+  margin-bottom: 1rem;
+  font-weight: 100;
+}
+
+.modal>div>ul span {
+  display: block;
+  font-weight: 800 !important;
+  margin-bottom: .3rem;
+}
+
+.instructionsContainer ul {
+  position: relative;
+  list-style-type: none;
+  right: 10px;
+}
+
+
   
   /* Mobile Friendly */
   /* @media (max-width: 768px) {

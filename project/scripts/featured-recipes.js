@@ -9,7 +9,66 @@ export async function loadRecipes() {
         console.error('Error fetching recipes:', error);
     }
 }
+
+export function showModal(recipe) {
+    const dialog = document.createElement('dialog');
+    dialog.setAttribute('class', 'modal');
+
+    const ingredientsContainer = document.createElement('div');
+    ingredientsContainer.className = 'ingredientsContainer';
+    const ingredientsHeader = document.createElement('h3');
+    ingredientsHeader.textContent = 'Ingredients';
+    const ingredients = document.createElement('ul');
+    recipe.ingredients.forEach((ingredient) => {
+        const listOfIngredient = document.createElement('li');
+        listOfIngredient.textContent = ingredient;
+        ingredients.appendChild(listOfIngredient);
+    })
+    ingredientsContainer.append(ingredientsHeader, ingredients);
+
     
+    const instContainer = document.createElement('div');
+    instContainer.className = 'instructionsContainer';
+    const instHeader = document.createElement('h3');
+    instHeader.textContent = 'Instructions';
+    const instructions = document.createElement('ul');
+    recipe.instructions.forEach((instruction, index) => {
+        instructions.innerHTML += `<li><span>Step ${index + 1}</span>${instruction}`;
+    })
+    instContainer.append(instHeader, instructions);
+
+
+    dialog.append(ingredientsContainer, instContainer);
+
+    // Append the modal to the body
+    document.body.appendChild(dialog);
+
+    // Show the modal
+    dialog.showModal();
+
+    dialog.scrollTop = 0;
+
+
+    // Close the modal when the close button is clicked
+    // const closeButton = dialog.querySelector('.close-button');
+    // closeButton.addEventListener('click', () => {
+    //     dialog.close();
+    //     dialog.remove();
+    // });
+
+    // Close the modal when clicking outside the modal content
+    dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) {
+            dialog.classList.add('closing'); // Add the closing animation class
+            setTimeout(() => {
+                dialog.close();
+                dialog.remove();
+            }, 200); 
+            document.body.style.overflow = "";
+        }
+    });
+} 
+
 async function displayRandomRecipes() {
     const recipes = await loadRecipes();
 
@@ -61,7 +120,10 @@ async function displayRandomRecipes() {
             recipeImage.style.transition = "transform 0.7s ease-in-out";
         });
 
-
+        card.querySelector('.view-recipe-btn').addEventListener('click', () => {
+            document.body.style.overflow = "hidden";
+            showModal(recipe);
+        });
 
     });
 }
