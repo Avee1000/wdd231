@@ -59,5 +59,25 @@
         width: 100%;
     }
 
+    .recipesPage>*{
+        width: calc(100% / 2);
+        margin-left: 5rem;
+      }
+
+      @media screen and (width >= 1000px) and (width <= 1369px) {
+
+        .recipesPage {
+            padding-top: 7rem;
+        }
+        
+        .recipesPage>*{
+            width: calc(100% / 1.6);
+        }
+    
+        .recipesPage .heroText p {
+            font-size: clamp(.5rem, 2vw, 1.5rem);
+        }
+    }
 
 }
+

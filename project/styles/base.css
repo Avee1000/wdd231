@@ -61,7 +61,7 @@ html {
     font-family: "Thicccboi";
 }
 
-.header {
+header {
     position: relative;
     width: 100%;
     height: 100dvh;
@@ -69,7 +69,7 @@ html {
     background-image: linear-gradient(to bottom,rgba(0,0,0,1) 0,rgba(0,0,0,0) 100%);
 }
 
-.header::before{
+header::before{
     content: "";
     position: absolute;
     top: 0;
@@ -96,29 +96,6 @@ html {
     padding: 0 2rem;
     z-index: 10;
 }
-
-/* .static {
-    background-color: rgba(0, 0, 0, 0.976);
-    transition: all .7s ease-in-out;
-    z-index: 1;
-}
-
-.static #logo {
-    margin-left: 2rem;
-    transform: scale(.9);
-    transition: all .5s ease-in-out;
-}
-
-.remove-static {
-    background-color: rgba(0, 0, 0, 0);
-    transition: .5s ease-in-out;
-}
-
-.remove-static #logo {
-    margin-left: 0;
-    transform: scale(1);
-    transition: all .5s ease-in-out;
-} */
 
 #logo {
     display: flex;
@@ -278,6 +255,57 @@ a.active {
     margin: 0 auto;
     filter: invert(1);
     animation: unset;
+}
+
+.recipesPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  height: inherit;
+}
+
+.recipesPage>*{
+  all: unset;
+  width: calc(100% / 1.5);
+  margin-left: 3rem;
+}
+
+.recipesPage .heroText h2 {
+  width: 100%;
+}
+.recipesPage .heroText p {
+  color: white;
+  font-weight: 250;
+  font-family: "roboto";
+  border-bottom: 2px solid white;
+  padding-bottom: 1rem;
+}
+
+.recipesPage .heroLinkContainer div {
+  position: relative;
+  max-width: 90%;
+  margin: 1.5rem  auto 0 auto;
+}
+
+.recipesPage .heroLinkContainer a {
+  all: unset;
+  background-color: var(--darker-highlight);
+  color: white;
+  display: inline-block;
+  padding: .8rem 3rem;
+  font-size: clamp(.5rem, .7rem, 1rem);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.recipesPage .heroLinkContainer a:hover {
+  background-color: var(--secondary);
+}
+
+.recipesPage .learn-more::after {
+  all: unset;
 }
 
 #searchBoxContainer {
