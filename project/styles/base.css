@@ -214,7 +214,7 @@ a.active {
     font-weight: 200;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
-    letter-spacing: -1.5px;
+    letter-spacing: -1px;
 }
 
 .learn-more {
@@ -264,6 +264,7 @@ a.active {
   align-items: flex-start;
   position: relative;
   height: inherit;
+  top: 3rem;
 }
 
 .recipesPage>*{
@@ -675,6 +676,50 @@ a.active {
   line-height: 1.5;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 1rem;
+    padding: 0;
+    max-width: 1500px;   
+}
+
+.recipesProductCard {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.recipeImageContainer {
+  width: 150px;
+  height: 150px;
+}
+
+.recipeImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
   
   /* Mobile Friendly */

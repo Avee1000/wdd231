@@ -96,10 +96,12 @@ async function displayRandomRecipes() {
         const card = recipeCard[index];
 
         const recipeImage = card.querySelector('.recipe-card .imgContainer img');
-        recipeImage.setAttribute('src', recipe.image);
-        recipeImage.setAttribute('alt', recipe.name);
-        recipeImage.setAttribute('height', 300);
-        recipeImage.setAttribute('width', 200);
+        if (recipeImage) {
+            recipeImage.setAttribute('src', recipe.image);
+            recipeImage.setAttribute('alt', recipe.name);
+            recipeImage.setAttribute('height', 300);
+            recipeImage.setAttribute('width', 200);            
+        }
 
         const recipeInfo = card.querySelector('.recipe-card .recipes');
         recipeInfo.innerHTML += `
@@ -128,4 +130,6 @@ async function displayRandomRecipes() {
     });
 }
 
-displayRandomRecipes();
+if (document.querySelector('.recipe-card')) {
+    displayRandomRecipes();
+}
