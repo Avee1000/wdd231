@@ -1,5 +1,5 @@
 /* //////////////////////////////////////////////////////////////////////// */
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 800px){
     .switch{
         position: absolute;
         top: 1rem;
@@ -63,7 +63,7 @@
         margin-left: 5rem;
       }
 
-      @media screen and (width >= 1000px) and (width <= 1369px) {
+      @media screen and (width >= 800px) and (width <= 1369px) {
 
         .navigation li{
             padding: .8rem .6rem;

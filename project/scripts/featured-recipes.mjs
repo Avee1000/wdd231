@@ -122,7 +122,10 @@ async function displayRandomRecipes() {
             recipeImage.style.transition = "transform 0.7s ease-in-out";
         });
 
-
+        card.querySelector('.view-recipe-btn').addEventListener('click', () => {
+            document.body.style.overflow = "hidden";
+            showModal(recipe);
+        });
 
     });
 }
