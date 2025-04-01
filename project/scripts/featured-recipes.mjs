@@ -89,9 +89,7 @@ async function displayRandomRecipes() {
 
     const randomRecipes = Array.from(set).map(index => recipeList[index]);
     console.log(randomRecipes);
-    // Step 2: Get the 3 recipe card elements
 
-    // Step 3: Populate each card
     randomRecipes.forEach((recipe, index) => {
         const card = recipeCard[index];
 

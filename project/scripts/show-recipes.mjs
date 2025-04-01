@@ -49,6 +49,60 @@ async function displayRecipes(recipeData) {
             child.style.backgroundColor = "";
         });
 
+
+
+        /////////////////////////////////////////////////////////////////
+        //WORKING WITH LOCAL STORAGE
+        //loading saved recipes from localStorage
+        const saveButton = clone.querySelector("a.addFavorites");
+        const recipeLink = saveButton.parentElement;
+        const recipeInfo = recipeLink.previousElementSibling;
+        const nameOfRecipe = recipeInfo.querySelector('h3');
+
+
+        const favorites = localStorage.getItem("favorites");
+        const favoritesList = JSON.parse(favorites);
+        if (favoritesList.length !== 0) {
+            const alreadySaved = favoritesList.filter((p) => recipe.id === p.id);
+            if (alreadySaved.length > 0) {
+                if (nameOfRecipe.textContent === alreadySaved[0].name) {
+                    const savedRecipeParentsibling = nameOfRecipe.parentElement.nextElementSibling;
+                    const savedRecipeLinkbutton = savedRecipeParentsibling.querySelector('a span');
+                    savedRecipeLinkbutton.textContent = "Saved";
+                    savedRecipeLinkbutton.parentElement.classList.toggle('saved');
+                }
+            }
+
+        } 
+
+
+        ////////////////////////////////////////////////////////////
+        // SAVE TO LOCAL STORAGE CODE
+        saveButton.addEventListener("click", () => {
+            saveButton.classList.toggle("saved");
+            saveButton.querySelector('span').textContent = saveButton.classList.contains("saved") ? "Saved" : "Save";
+
+            if (saveButton.querySelector('span').textContent === "Saved") {    
+                if (recipe.name.includes(nameOfRecipe.textContent)) {
+                    let savedRecipes = JSON.parse(localStorage.getItem("favorites")) || [];
+                    const exists = savedRecipes.find(r => r.id === recipe.id);
+                    if (!exists) {
+                      savedRecipes.push(recipe);
+                      localStorage.setItem("favorites", JSON.stringify(savedRecipes));
+                    }
+                }
+            } else {
+                const storedData = JSON.parse(localStorage.getItem("favorites"));
+                if (storedData) {
+                    const find = storedData.filter((d) => d.name !== nameOfRecipe.textContent);
+                    localStorage.setItem("favorites", JSON.stringify(find));
+                  }
+
+            }
+
+        });
+
+
         clone.querySelector('.view-recipe-btn').addEventListener('click', () => {
             document.body.style.overflow = "hidden";
             showModal(recipe);
@@ -114,7 +168,7 @@ async function renderRecipes(page = 1) {
 }
 
 // Function to render pagination controls
-function renderPagination(totalRecipes, currentPage) {
+export function renderPagination(totalRecipes, currentPage) {
     const totalPages = Math.ceil(totalRecipes / recipesPerPage);
     paginationContainer.innerHTML = '';
 
@@ -136,3 +190,5 @@ function renderPagination(totalRecipes, currentPage) {
 document.addEventListener('DOMContentLoaded', () => {
     renderRecipes(currentPage);
 });
+
+
