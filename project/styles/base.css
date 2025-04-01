@@ -750,6 +750,7 @@ a.active {
   padding: 1rem 0;
 }
 .recipeInformationContainer *{
+  
   margin: .4rem;
 }
 .recipeInformationContainer .mealType {
