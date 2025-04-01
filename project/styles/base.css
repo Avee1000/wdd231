@@ -30,6 +30,22 @@ font-style: normal;
 font-display: auto;
 }
 
+@font-face {
+font-family: Thicccboi;
+src: url('../fonts/Webfont/THICCCBOI-Regular.woff2') format('woff2');
+font-weight: 200;
+font-style: normal;
+}
+
+@font-face {
+font-family: Thicccboi;
+src: url('../fonts/Webfont/THICCCBOI-Thin.woff2') format('woff2');
+font-weight: 100;
+font-style: normal;
+}
+
+  
+
 :root {
     --secondary: #6A994E;
     --secondaryDarker: #4d6d3a;
@@ -39,7 +55,7 @@ font-display: auto;
     --text-muted: #6C757D;
     --border: #DADADA;
     --highlight: #ff9100;
-    --darker-highlight: #ff4d00;
+    --darker-highlight: rgb(255, 77, 0);
 
     --darkBackground: #1F1F1F;
     --dark-card-bg: #2A2A2A;
@@ -610,7 +626,7 @@ a.active {
     position: absolute;
     bottom: 0;
     left: 0;
-    left:-15px;
+    left:-30px;
     border-radius: 10px;
 }
 .instructionsContainer h3::before {
@@ -621,9 +637,9 @@ a.active {
   list-style-type: disc;
   list-style-position: inside;
   margin-bottom: 1rem;
-  font-weight: 100;
+  font-weight: 200;
   position: relative;
-  right: 15px;
+  right: 30px;
 }
 
 .modal>div>ul span {
@@ -690,35 +706,143 @@ a.active {
 
 
 /* ///////////////////////////////////////////////////////////////////////// */
+#filter-section {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  font-weight: 300;  
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+#filter-section label {
+  margin: 0 1rem;
+}
 
+#filter-section select {
+  font-weight: 300;  
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+}
 
 #product-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    margin: 20px 1rem;
+    margin: 20px auto;
     padding: 0;
     max-width: 1500px;   
 }
 
 .recipesProductCard {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.recipeInformationContainer {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  background-color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+.recipeInformationContainer *{
+  margin: .4rem;
+}
+.recipeInformationContainer .mealType {
+  color: #ff4000 !important;
 }
 
 .recipeImageContainer {
-  width: 150px;
-  height: 150px;
+  position: relative;
+  border-radius: 10px;
+  width: auto;
+  height: calc(100% / 1.5);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
 }
-
 .recipeImageContainer img {
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+
+.info-button {
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+.info-button svg {
+  fill: white;
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 60%;
+  padding: 6px;
+  transition: background-color .5s ease-in-out;
+}
+
+.img-text-overlay {
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.91);
+  position: absolute;
+  width: 100%;
+  top: -100%;
+  height: 100%;
+  transition: .3s ease-in-out;
+}
+.text *{
+  font-family: "roboto";
+  font-weight:400;
+  margin: .7rem;
+  color: white;
+  text-align: left;
+}
+
+.recipeLinksContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.addFavorites {
+  display: flex;
+  gap: 5px;;
+  justify-content: center;
+  /* width: 60%; */
+  color: #ff4000;
+  padding: 0.7rem 1rem;
+  border: 2px solid #ff4000;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.addFavorites svg {
+  fill: #ff4000;
+  height: 20px;
+  display: inline;
+}
+
+.recipeLinksContainer .view-recipe-btn {
+  flex: 1;
+  text-align: center;
+  font-size: 14pt;
+  font-weight: 800;
+  padding: 0.7rem 1rem;
+  background-color: var(--secondaryDarker);
+}
+.recipeLinksContainer .view-recipe-btn:hover {
+  background-color: #66a544;
 }
 
   
