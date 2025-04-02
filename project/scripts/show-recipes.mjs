@@ -62,7 +62,7 @@ async function displayRecipes(recipeData) {
 
         const favorites = localStorage.getItem("favorites");
         const favoritesList = JSON.parse(favorites);
-        if (favoritesList.length !== 0) {
+        if (favorites) {
             const alreadySaved = favoritesList.filter((p) => recipe.id === p.id);
             if (alreadySaved.length > 0) {
                 if (nameOfRecipe.textContent === alreadySaved[0].name) {
