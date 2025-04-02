@@ -744,7 +744,7 @@ a.active {
 
 #product-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap: 50px;
     margin: 3rem 50px;
 }
@@ -753,6 +753,7 @@ a.active {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: 0 auto;
 }
 
 .recipeInformationContainer {
@@ -890,6 +891,39 @@ a.active {
   background-color: #66a544;
 }
 
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 5rem;
+}
+.pagination-controls button {
+  outline: 0;
+  justify-self: center;
+}
+.page-button {
+  padding: 10px 15px;
+  background-color: #7bb15ea2;
+  border: 1px solid rgb(0, 0, 0);
+  color: black;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.page-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.page-button.active {
+  background-color: #218838;
+  font-weight: bold;
+  cursor: default;
+}
+.page-button:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}
   
   /* Mobile Friendly */
   /* @media (max-width: 768px) {

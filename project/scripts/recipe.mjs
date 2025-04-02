@@ -33,19 +33,3 @@ heroContainerMain.querySelector('a').innerHTML = `Browse All Recipes`;
 const searchBox = document.querySelector('#searchBoxContainer');
 searchBox.classList.add('recipeSearchBox');
 
-// const search = document.querySelector('#search');
-// const recipes = await loadRecipes();
-// search.addEventListener('input', (e) => {
-
-//   const button = search.nextElementSibling;
-//   button.onclick = null;
-//   recipes.forEach((recipe) => {
-//     if (recipe.name.toLowerCase().includes(e.target.value)) {
-//       button.addEventListener('click', () => {
-//         console.log(recipe.name)
-//       });
-//     }
-//   });
-
-// });
-

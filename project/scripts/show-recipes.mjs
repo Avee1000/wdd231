@@ -98,9 +98,7 @@ async function displayRecipes(recipeData) {
                     const find = storedData.filter((d) => d.name !== nameOfRecipe.textContent);
                     localStorage.setItem("favorites", JSON.stringify(find));
                   }
-
             }
-
         });
 
 
@@ -133,6 +131,18 @@ sort.addEventListener('change', () => {
     renderRecipes();
 });
 
+const searchInput = document.getElementById('search');
+const searchIcon = document.querySelector('.search-icon');
+searchIcon.addEventListener('click', () => {
+    renderRecipes(); 
+});
+searchInput.addEventListener('input', () => {
+    if (searchInput.value.trim() === '') {
+        console.log(searchInput.value.length)
+        renderRecipes(); 
+    }
+});
+
 // Function to render recipes
 async function renderRecipes(page = 1) {
     try {
@@ -151,7 +161,17 @@ async function renderRecipes(page = 1) {
             filtered.sort((a, b) => b.caloriesPerServing - a.caloriesPerServing);
         }
 
+        const searchTerm = searchInput.value.toLowerCase();
+        if (searchTerm) {
+            filtered = filtered.filter(recipe => 
+                recipe.name.toLowerCase().includes(searchTerm) ||
+                recipe.mealType.some((m) => {return m.toLowerCase().includes(searchTerm)}) ||
+                recipe.cuisine.toLowerCase().includes(searchTerm)
+            );
+        } 
+
         const startIndex = (page - 1) * recipesPerPage;
+        console.log(page)
         console.log(startIndex)
         const endIndex = startIndex + recipesPerPage;
         console.log(endIndex)
@@ -178,6 +198,7 @@ export function renderPagination(totalRecipes, currentPage) {
         pageButton.textContent = i;
         pageButton.classList.add('page-button');
         if (i === currentPage) {
+            pageButton.disabled = true;
             pageButton.classList.add('active');
         }
         pageButton.addEventListener('click', () => {
