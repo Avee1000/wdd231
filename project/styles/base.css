@@ -339,11 +339,16 @@ a.active {
     clip-path: circle(0 at 90% -10%);
     transition: clip-path 0.5s ease;
 }
-
+#searchBoxContainer.recipeSearchBox {
+  background-color: #7bb15ea2;
+  padding: 2rem 0 0 0;
+  position: relative;
+  clip-path: none;
+  z-index: unset;
+}
 #searchBoxContainer.searchActive {
     clip-path: circle(150% at 100% 10%);
 }
-
 .searchContainer input {
     width: 250px;
     height: 40px;
@@ -355,9 +360,11 @@ a.active {
     font-family: roboto, serif, Arial;
     border-radius: 30px 0 0 30px;
     text-indent: 20px;
-
 }
-
+.recipeSearchBox input {
+  border: 1px solid var(--dark-text-muted);
+  border-right: none;
+}
 .searchContainer input::placeholder {
     position: relative;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -365,7 +372,6 @@ a.active {
     letter-spacing: -1px;
     left: 0;
 }
-
 .search-icon{
     display: flex;
     justify-content: center;
@@ -374,27 +380,31 @@ a.active {
     padding: 6px 15px;
     margin-top: 8px;
     margin-right: 16px;
-    background: var(--secondary);
+    background-color: var(--secondary);
     border: none;
     height: 40px;
     cursor: pointer;
     border-radius: 0 30px 30px 0;
 }
-
+.recipeSearchBox .search-icon  {
+  background-color: var(--highlight);
+  border: 1px solid var(--dark-text-muted);
+  border-right: none;
+}
 .search-icon svg {
     height: 20px;
     fill: black;
 }
-
 .search-icon:hover{
     background-color: var(--secondary);
     opacity: .7;
 }
-
 .close {
     cursor: pointer;
 }
-
+.recipeSearchBox .close {
+  display: none;
+}
 .close svg{
     display: block;
     height: 35px;

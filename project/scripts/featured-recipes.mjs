@@ -44,6 +44,7 @@ export function showModal(recipe) {
     document.body.appendChild(dialog);
 
     // Show the modal
+    document.body.style.overflow = "auto";
     dialog.showModal();
 
     dialog.scrollTop = 0;
@@ -64,7 +65,7 @@ export function showModal(recipe) {
                 dialog.close();
                 dialog.remove();
             }, 200); 
-            document.body.style.overflow = "";
+            // document.body.style.overflow = "";
         }
     });
 } 
@@ -121,7 +122,6 @@ async function displayRandomRecipes() {
         });
 
         card.querySelector('.view-recipe-btn').addEventListener('click', () => {
-            document.body.style.overflow = "hidden";
             showModal(recipe);
         });
 
