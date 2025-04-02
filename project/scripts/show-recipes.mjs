@@ -65,6 +65,7 @@ async function displayRecipes(recipeData) {
         if (favorites) {
             const alreadySaved = favoritesList.filter((p) => recipe.id === p.id);
             if (alreadySaved.length > 0) {
+                console.log(alreadySaved[0])
                 if (nameOfRecipe.textContent === alreadySaved[0].name) {
                     const savedRecipeParentsibling = nameOfRecipe.parentElement.nextElementSibling;
                     const savedRecipeLinkbutton = savedRecipeParentsibling.querySelector('a span');
