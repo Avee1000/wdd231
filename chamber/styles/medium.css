@@ -127,51 +127,22 @@
 
 /* ///////////////////////////////////////////////////////////////////////////// */
 
-    .discover{
-        margin: 2rem;
-    }
+    .cards {
+        display: grid;
+        grid-template-areas: 
+        "photograph name"
+        "photograph description"
+        "photograph address"
+        "photograph button";
 
-    .discover h5{
-        font-size: 2rem;
-        margin: 3rem;
-        text-align: center;
     }
-
-    .left-sidebar{
-        font-size: 17px;
-        padding: 1.5rem 0;
-        background-color: var(--primary-color);
-        border-radius: 10px;
-        box-shadow: 5px 5px 10px 2px rgb(111, 110, 110);
+    .cards img {
+        width: 300px;
     }
-    
-
-    .left-sidebar section{
-        padding: 1rem;
-        margin: 1rem 2rem;
-    }
-
-    .right-sidebar{
-        display: flex;
-        flex-direction: column;
-        margin: 3rem 0;
-        border-radius: 10px;
-        box-shadow: 5px 5px 10px 2px rgb(111, 110, 110);
+    .cards h2 {
         height: auto;
-        /* text-align: center; */
     }
 
-
-    figure img{
-        max-width: 100%;
-        transition: transform 1s, filter 2s;
-        filter: saturate(20%);
-    }
-
-    figure img:hover {
-        transform: scale(1.04);
-        filter: saturate(100%);
-    }
 
 
 

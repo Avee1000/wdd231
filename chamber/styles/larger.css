@@ -119,63 +119,11 @@
     }
 
 /* ////////////////////////////////////////////////////////////////////////////////// */
-    .discover{
-        font-size: 17px;
+    .edo-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto 1fr;
-        justify-content: center;
-        column-gap: 4rem;
-        row-gap: 2rem;
-        margin: 2rem 5rem;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .discover h5{
-        font-size: 2rem;
-        grid-column: 1/4;
-        grid-row: 1/2;
-        text-align: center;
-    }
-
-    .dark-mode .left-sidebar{
-        border-radius: 10px;
-    }
-
-    .left-sidebar{
-        grid-column: 1/2;
-        grid-row: 2/4;
-        background-color: var(--primary-color);
-        border-radius: 10px;
-        box-shadow: 5px 5px 10px 2px rgb(111, 110, 110);
-        height: 50%;
-    }
-
-    .left-sidebar section{
-        margin: 0 ;
-    }
-
-    .left-sidebar h2{
-        font-size: 1.3rem;
-    }
-
-    .right-sidebar{
-        grid-column: 2/4;
-        grid-row: 2/4;
-        border-radius: 10px;
-        box-shadow: 5px 5px 10px 2px rgb(111, 110, 110);
-        height: auto;
-    }
-
-    figure img{
-        max-width: 100%;
-        transition: transform 1s, filter 2s;
-        filter: saturate(20%);
-    }
-
-    figure img:hover {
-        transform: scale(1.04);
-        filter: saturate(100%);
-    }
 
 
     /*------------------------FORMS-------------------------*/
