@@ -28,7 +28,7 @@ ms.addEventListener('click', () => {
     const targetPosition = target.getBoundingClientRect().top + window.scrollY; 
 
     window.scrollTo({
-        top: targetPosition - navHeight 
+      top: targetPosition - navHeight
     });
     const heroBottom = header.getBoundingClientRect().bottom;
     const measure = header.offsetHeight - navContainer.offsetHeight;
@@ -85,24 +85,12 @@ window.addEventListener('scroll', () => {
 const heroText = document.querySelector('.heroText');
 const logoCont = document.querySelector('#logoAndNavigationContainer');
 const main = document.querySelector('.main');
-const heroCont = document.querySelector('.heroContainer');
 const learnMore = document.querySelector('.learn-more');
 window.addEventListener('scroll', () => {
-  const heroTextTop = heroText.getBoundingClientRect().top;
-  const logocontBottom = logoCont.getBoundingClientRect().bottom;
-
-  if (heroTextTop <= logocontBottom) {
-    main.style.transform = 'scale(0)';
-    main.style.opacity = '0';
-    main.style.transition = 'all .3s ease';
-  } else {
-    main.style.transform = 'scale(1)';
-    main.style.opacity = '1';
-    main.style.transition = 'all .3s ease';
-
-  }
   const rect = heroText.getBoundingClientRect();
   const windowHeight = window.innerHeight;
+  const heroBottom = header.getBoundingClientRect().bottom;
+  const measure = header.offsetHeight - navContainer.offsetHeight;
 
 
 //   // Get how far the element is from the middle of the screen
@@ -113,21 +101,42 @@ window.addEventListener('scroll', () => {
 
 //   // Calculate opacity: 1 when centered, 0 when far away
   let opacity = 1 - distanceFromCenter / maxDistance;
-//   let scale = 1 - distanceFromCenter / maxDistance;
-
-//   // Clamp between 0 and 1
-  opacity = Math.max(0, Math.min(1, opacity));
-//   // scale = Math.max(0, Math.min(1, scale));
-
-//   heroText.style.opacity = opacity;
-//   // heroText.style.transform = `scale(${scale})`;
+  // opacity = Math.max(0, Math.min(1, opacity));
+  heroText.style.opacity = opacity;
 
   const style = document.createElement('style');
   style.innerHTML = `
  .heroLinkContainer a.learn-more {
   animation: unset;
   opacity: ${opacity.toFixed(2)}};`;
-  document.querySelector(".learn-more").appendChild(style);
+  learnMore.appendChild(style);
+
+  
+  if (navContainer.offsetHeight >= heroBottom && window.scrollY >= measure) {
+    heroText.style.display = 'none';
+  } else {
+    heroText.style.display = 'block';
+  }
+
+  if (window.scrollY === 0) {
+    heroText.style.opacity = 1;
+    learnMore.style.opacity = 1;
+
+  }
+
+  // const heroTextTop = heroText.getBoundingClientRect().top;
+  // const logocontBottom = logoCont.getBoundingClientRect().bottom;
+
+  // if (heroTextTop <= logocontBottom) {
+  //   main.style.transform = 'scale(0)';
+  //   main.style.opacity = '0';
+  //   main.style.transition = 'all .3s ease';
+  // } else {
+  //   main.style.transform = 'scale(1)';
+  //   main.style.opacity = '1';
+  //   main.style.transition = 'all .3s ease';
+
+  // }
 });
 
 // document.addEventListener('DOMContentLoaded', () => {

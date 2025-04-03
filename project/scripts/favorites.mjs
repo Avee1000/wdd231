@@ -1,5 +1,39 @@
 
-import {showModal} from './featured-recipes.mjs';
+import { showModal } from './featured-recipes.mjs';
+
+const images = [
+    "images/fav.jpg",
+    "images/fav2.jpg",
+    "images/fav3.jpg"
+];
+
+const randomIndex = Math.floor(Math.random() * images.length);
+const style = document.createElement('style');
+const header = document.querySelector('#header');
+style.innerHTML += `    
+    header {
+    height: 70vh;
+    }
+    .main {
+    margin-top: -30px;
+    }
+  #header::before {
+    background-image: url('${images[randomIndex]}');
+  }
+
+`;
+header.appendChild(style);
+
+let savedNumber = JSON.parse(localStorage.getItem('favorites'));
+
+////////////////////////////////////////////////////
+const heroContainerMain = document.querySelector('.heroContainer');
+heroContainerMain.querySelector('.heroText h2').innerHTML = `Your Favorite Recipes`;
+heroContainerMain.querySelector('.heroText p').innerHTML = `<span>${savedNumber.length !== 0 ? savedNumber.length : 0}</span> Recipes saved with love and hunger`;
+
+heroContainerMain.querySelector('a').innerHTML = `View all Favorites`;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 const recipesContainer = document.getElementById('product-list');
 const template = document.querySelector('#recipesCardTemplate');
@@ -64,8 +98,9 @@ async function displayRecipes(recipeData) {
             containerToBeRemoved.style.transition = '.5s ease';
             setTimeout(() => {
                 containerToBeRemoved.remove();
-            }, 100);
-            // containerToBeRemoved.remove();
+            }, 300);
+            heroContainerMain.querySelector('.heroText p').innerHTML = `<span>${newCurrentLocal.length!==0 ? newCurrentLocal.length : 0}</span> Recipes saved with love and hunger`;
+
         });
 
         recipesContainer.appendChild(clone);
@@ -111,4 +146,3 @@ function renderSavedRecipes() {
 }
 
 renderSavedRecipes();
-

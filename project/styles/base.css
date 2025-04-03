@@ -204,13 +204,13 @@ a.active {
 }
 
 .main {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 0;
-    margin-top: -70px;
-    height: 160px;
-    text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -70px;
+  height: 160px;
+  text-align: center;
 }
 
 .heroText h2{
@@ -231,6 +231,16 @@ a.active {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
     letter-spacing: -1px;
+}
+.heroText p>span {
+  background-color: var(--highlight);
+  color: black;
+  /* clip-path: circle(100% at 50% 50%); */
+  border-radius: 50%;
+  padding: 5px 15px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
 }
 
 .learn-more {
@@ -873,15 +883,15 @@ a.active {
   }
   40% {
     transform: scale(1.2) rotate(-10deg);
-    background-image: url('../images/heart-solid.svg'); 
+    background-image: url('../images/heart-solid\ \(1\).svg'); 
   }
   75% {
     transform: scale(1.5) rotate(0deg);
-    background-image: url('../images/heart-solid.svg'); 
+    background-image: url('../images/heart-solid\ \(1\).svg'); 
   }
   100% {
     transform: scale(1) rotate(0deg);
-    background-image: url('../images/heart-solid.svg'); 
+    background-image: url('../images/heart-solid\ \(1\).svg'); 
   }
 }
 
@@ -923,6 +933,8 @@ a.active {
 .page-button.active {
   background-color: #218838;
   font-weight: bold;
+  font-size: 14pt;
+  color: white;
   cursor: default;
 }
 .page-button:hover {
@@ -931,7 +943,7 @@ a.active {
 }
 
 .savedAlert span{
-  position: fixed;
+  position: absolute;
   bottom: -100%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -963,6 +975,7 @@ span.showAlert {
 }
 .removeFavorites svg {
   height: 20px;
+  fill: white;
 }
   /* Mobile Friendly */
   /* @media (max-width: 768px) {

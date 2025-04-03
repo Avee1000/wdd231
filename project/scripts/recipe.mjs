@@ -1,5 +1,3 @@
-import { loadRecipes } from "./featured-recipes.mjs";
-
 const images = [
     "images/recipe.jpg",
     "images/recipe1.jpg",
