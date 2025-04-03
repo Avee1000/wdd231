@@ -18,8 +18,8 @@ async function displayRecipes(recipeData) {
         const image = clone.querySelector('img');
         image.setAttribute('src', recipe.image);
         image.setAttribute('alt', recipe.name);
-        image.setAttribute('height', 200);
-        image.setAttribute('width', 200);     
+        image.setAttribute('height', 300);
+        image.setAttribute('width', 300);     
 
         const recipeInformationContainer = clone.querySelector('.recipeInformationContainer');
         recipeInformationContainer.innerHTML = `<h3>${recipe.name}</h3>
@@ -92,6 +92,11 @@ async function displayRecipes(recipeData) {
                       localStorage.setItem("favorites", JSON.stringify(savedRecipes));
                     }
                 }
+                const savedAlert = document.querySelector('.savedAlert span');
+                savedAlert.classList.add('showAlert');
+                setTimeout(() => {
+                    savedAlert.classList.remove('showAlert');
+                }, 1000); 
             } else {
                 const storedData = JSON.parse(localStorage.getItem("favorites"));
                 if (storedData) {

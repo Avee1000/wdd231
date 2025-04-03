@@ -7,7 +7,7 @@ const template = document.querySelector('#recipesCardTemplate');
 async function displayRecipes(recipeData) {
     recipesContainer.innerHTML = '';
 
-    recipeData.forEach(recipe => {
+    recipeData.forEach((recipe) => {
         const clone = template.content.cloneNode(true);
         const recipeImageContainer = clone.querySelector('.recipeImageContainer');
         const image = clone.querySelector('img');
@@ -49,11 +49,28 @@ async function displayRecipes(recipeData) {
             showModal(recipe);
         });
 
+        const removeButton = clone.querySelector('.removeFavorites');
+        removeButton.addEventListener('click', (e) => {
+            const informationContainer = removeButton.parentElement.previousElementSibling;
+            const containerToBeRemoved = informationContainer.parentElement;
+            const nameOfRecipe = informationContainer.querySelector('h3');
+            const currentLocal = JSON.parse(localStorage.getItem('favorites'));
+            let newCurrentLocal = currentLocal.filter((r) => r.name !== nameOfRecipe.textContent);
+            localStorage.setItem("favorites", JSON.stringify(newCurrentLocal));
+            console.log(newCurrentLocal)
+            console.log(nameOfRecipe.textContent)
+
+            containerToBeRemoved.style.transform = 'scale(0)';
+            containerToBeRemoved.style.transition = '.5s ease';
+            setTimeout(() => {
+                containerToBeRemoved.remove();
+            }, 100);
+            // containerToBeRemoved.remove();
+        });
+
         recipesContainer.appendChild(clone);
     });
 }
-
-
 
 const difficultySelect = document.querySelector('#difficulty');
 difficultySelect.addEventListener('change', () => {
@@ -90,7 +107,6 @@ function renderSavedRecipes() {
     } else {
         filtered.sort((a, b) => b.caloriesPerServing - a.caloriesPerServing);
     }
-
     displayRecipes(filtered);
 }
 
