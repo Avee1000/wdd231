@@ -633,7 +633,8 @@ a.active {
 }
   
 .modal::backdrop {
-    background-color: rgba(0, 0, 0, 0.97);
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
 }
 
 .modal h3 {
@@ -956,7 +957,9 @@ a.active {
 span.showAlert {
   bottom: 0;
   opacity: 1;
+  z-index: 1;
 }
+
 
 
 
@@ -977,17 +980,107 @@ span.showAlert {
   height: 20px;
   fill: white;
 }
-  /* Mobile Friendly */
-  /* @media (max-width: 768px) {
-    .recipe-card {
-      flex-direction: column !important;
-      text-align: center;
-    }
-  
-    .recipe-info {
-      text-align: center;
-    }
-  } */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ///////////////////////////////////////////////////////// */
+.headerSubmit  {
+  background-color: var(--highlight);
+  background-image: none;
+  height: 80dvh;
+}
+.headerSubmit #logoAndNavigationContainer {
+  background-color: black;
+}
+.headerSubmit .main {
+  margin-top: 0;
+}
+.headerSubmit div.heroText {
+  opacity: 1 !important;
+}
+.headerSubmit div.heroText h2, .headerSubmit div.heroText p {
+  color: black;
+}
+.headerSubmit .learn-more {
+  display: none;
+}
+.submit-recipe-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.submit-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.recipe-form label,
+.recipe-form legend {
+  display: block;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.recipe-form input,
+.recipe-form select,
+.recipe-form textarea {
+  margin-top: .5rem;
+  display: block;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.recipe-card input[type="radio"] {
+  display: block;
+}
+
+.recipe-form input[type="text"],
+.recipe-form input[type="url"],
+.recipe-form textarea {
+  max-width: 100%;
+  width: 100%;
+}
+
+.recipe-form fieldset {
+  border: none;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.recipe-form button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.recipe-form button:hover {
+  background-color: #b74024;
+}
+
 
 @media  screen and (max-width: 790px) {
   #filter-section {

@@ -1,5 +1,5 @@
 
-import { loadRecipes, showModal } from './featured-recipes.mjs';
+import { loadRecipes, showModal } from './featured-recipes.js';
 
 const recipesContainer = document.getElementById('product-list');
 const paginationContainer = document.getElementById('pagination'); 

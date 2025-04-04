@@ -22,5 +22,7 @@ style.innerHTML += `
 `;
 header.appendChild(style);
 
-
+const heroContainerMain = document.querySelector('.heroContainer');
+heroContainerMain.querySelector('.heroText h2').innerHTML = `Discover, Cook, and Share Your Favorite Recipes`;
+heroContainerMain.querySelector('.heroText p').innerHTML = `Find your next favorite dish today!`;
 

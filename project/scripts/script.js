@@ -103,13 +103,8 @@ window.addEventListener('scroll', () => {
   let opacity = 1 - distanceFromCenter / maxDistance;
   // opacity = Math.max(0, Math.min(1, opacity));
   heroText.style.opacity = opacity;
-
-  const style = document.createElement('style');
-  style.innerHTML = `
- .heroLinkContainer a.learn-more {
-  animation: unset;
-  opacity: ${opacity.toFixed(2)}};`;
-  learnMore.appendChild(style);
+  learnMore.style.opacity = opacity;
+  learnMore.style.animation = 'none';
 
   
   if (navContainer.offsetHeight >= heroBottom && window.scrollY >= measure) {

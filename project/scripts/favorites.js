@@ -1,5 +1,5 @@
 
-import { showModal } from './featured-recipes.mjs';
+import { showModal } from './featured-recipes.js';
 
 const images = [
     "images/fav.jpg",
@@ -99,8 +99,7 @@ async function displayRecipes(recipeData) {
             setTimeout(() => {
                 containerToBeRemoved.remove();
             }, 300);
-            heroContainerMain.querySelector('.heroText p').innerHTML = `<span>${newCurrentLocal.length!==0 ? newCurrentLocal.length : 0}</span> Recipes saved with love and hunger`;
-
+            heroContainerMain.querySelector('.heroText p').innerHTML = `<span>${newCurrentLocal.length !== 0 ? newCurrentLocal.length : 0}</span> Recipes saved with love and hunger`;
         });
 
         recipesContainer.appendChild(clone);
