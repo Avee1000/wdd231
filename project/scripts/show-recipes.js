@@ -92,7 +92,7 @@ async function displayRecipes(recipeData) {
                       localStorage.setItem("favorites", JSON.stringify(savedRecipes));
                     }
                 }
-                const savedAlert = document.querySelector('.savedAlert span');
+                const savedAlert = document.querySelector('.savedAlert');
                 savedAlert.classList.add('showAlert');
                 setTimeout(() => {
                     savedAlert.classList.remove('showAlert');

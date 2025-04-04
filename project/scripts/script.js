@@ -109,8 +109,11 @@ window.addEventListener('scroll', () => {
   
   if (navContainer.offsetHeight >= heroBottom && window.scrollY >= measure) {
     heroText.style.display = 'none';
+    learnMore.style.display = 'none';
+
   } else {
     heroText.style.display = 'block';
+    learnMore.style.display = '';
   }
 
   if (window.scrollY === 0) {

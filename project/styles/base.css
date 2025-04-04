@@ -548,7 +548,7 @@ a.active {
   }
   
   .recipe-info h3 {
-    font-size: 1.5rem;
+    font-size: clamp(.5rem, 1rem, 1.5rem);
     color: var(--primary);
     margin-bottom: 0.5rem;
   }
@@ -557,11 +557,12 @@ a.active {
     /* color: var(--darker-highlight) !important; */
     /* color: var(--highlight) !important; */
     color: #cc3300 !important;
-    font-size: calc(100% + .5rem) !important;
+    font-size: calc(100% + .3em) !important;
+    font-weight: 700;
   }
   
   .recipe-info p {
-    font-size: 1rem;
+    font-size: clamp(.5rem, .8rem, 1rem);
     /* color: var(--text-muted); */
     color: var(--dark-card-bg);
     margin-bottom: 1rem;
@@ -580,7 +581,7 @@ a.active {
     padding: 0.5rem 1rem;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 14pt;
+    font-size: clamp(7pt, 14pt, 15pt);
     font-weight: bold;
     transition: background-color 0.3s ease;
     cursor: pointer;
@@ -678,13 +679,13 @@ a.active {
 
 .whats-cooking {
   padding: 4rem 1rem;
-  background-color: var(--background);
+  background-color: var(--darkBackground);
   text-align: center;
 }
 
 .whats-cooking h2 {
-  font-size: 2rem;
-  color: var(--text-main);
+  font-size: clamp(2rem, 4vw, 4rem);
+  color: wheat;
   margin-bottom: 2rem;
 }
 
@@ -697,23 +698,30 @@ a.active {
 }
 
 .cooking-card {
-  background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   text-align: left;
+  color: white;
 }
 
 .cooking-card h3 {
   font-size: 1.25rem;
-  color: var(--primary);
   margin-bottom: 0.5rem;
+}
+.cooking-card h3 span {
+  display: inline-block;
+  background-color: var(--highlight);
+  color: black;
+  padding: .3rem 1rem;
+  border-radius: 10px;
 }
 
 .cooking-card p {
   font-size: 1rem;
-  color: var(--text-muted);
   line-height: 1.5;
+  font-weight: 400;
+  font-family: roboto;
 }
 
 
@@ -943,7 +951,8 @@ a.active {
     transform: scale(1.1);
 }
 
-.savedAlert span{
+.savedAlert{
+  display: none;
   position: fixed;
   bottom: -100%;
   left: 50%;
@@ -954,10 +963,12 @@ a.active {
   opacity: 0;
   transition: .3s ease-in-out;
 }
-span.showAlert {
+.showAlert {
   bottom: 0;
   opacity: 1;
   z-index: 1;
+  display: block;
+
 }
 
 
@@ -1083,6 +1094,63 @@ span.showAlert {
 
 
 @media  screen and (max-width: 790px) {
+  
+  nav {
+    display: none;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(5px);
+
+  }
+  .show {
+    display: flex;
+  }
+  .navigation {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .navigation li {
+    margin: .4rem;
+    display: block;
+  }
+  a.active {
+    font-size: 12px;
+  }
+  .navigation li a:hover{
+    font-size: 12px;
+    color: var(--highlight);
+    transition: .3s linear;
+  }
+  #close {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    animation: move-up 1s ease-in-out 0s forwards;
+  }
+  #close svg {
+    cursor: pointer; 
+  }
+  @keyframes move-up {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-170%);
+    }
+}
+
   #filter-section {
     margin: 0;
     display: block;
