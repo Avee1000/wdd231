@@ -44,7 +44,7 @@ export function showModal(recipe) {
     document.body.appendChild(dialog);
 
     // Show the modal
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = "hidden";
     dialog.showModal();
 
     dialog.scrollTop = 0;
@@ -65,7 +65,7 @@ export function showModal(recipe) {
                 dialog.close();
                 dialog.remove();
             }, 200); 
-            // document.body.style.overflow = "";
+            document.body.style.overflow = "";
         }
     });
 } 
