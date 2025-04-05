@@ -1,6 +1,6 @@
-const dataJSON = ('/chamber/data/data.json');
+const url = "https://avee1000.github.io/wdd230/chamber/data/data.json";
 async function getData() {
-    const response = await fetch(dataJSON);
+    const response = await fetch(url);
     const data = await response.json();
     return data;
   }
