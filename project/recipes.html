@@ -138,9 +138,15 @@
             <div class="savedAlert">
                 <span>Recipe Saved!</span>
             </div>
-        
-                
         </main>
+
+        <script>
+            const heroContainerMain = document.querySelector('.heroContainer');
+            heroContainerMain.classList.add('recipesPage');
+            heroContainerMain.querySelector('.heroText h2').innerHTML = `Feeling hungry or curious?`;
+            heroContainerMain.querySelector('.heroText p').innerHTML = `Explore our handpicked recipes—from quick breakfasts to indulgent desserts. Search by category or scroll to discover your next favorite dish.`;
+            heroContainerMain.querySelector('a').innerHTML = `Browse All Recipes`;
+        </script>
         <script defer src="scripts/hamburger.js"></script>
         <script defer src="scripts/script.js"></script>
         <script defer src="scripts/show-recipes.js" type="module"></script>

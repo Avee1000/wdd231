@@ -1,37 +1,13 @@
 
 import { showModal } from './featured-recipes.js';
 
-const images = [
-    "images/fav.jpg",
-    "images/fav2.jpg",
-    "images/fav3.jpg"
-];
 
-const randomIndex = Math.floor(Math.random() * images.length);
-const style = document.createElement('style');
 const header = document.querySelector('#header');
-style.innerHTML += `    
-    header {
-    height: 70vh;
-    }
-    .main {
-    margin-top: -30px;
-    }
-  #header::before {
-    background-image: url('${images[randomIndex]}');
-  }
+header.classList.add('favoriteHeader');
 
-`;
-header.appendChild(style);
 
-let savedNumber = JSON.parse(localStorage.getItem('favorites'));
 
-////////////////////////////////////////////////////
-const heroContainerMain = document.querySelector('.heroContainer');
-heroContainerMain.querySelector('.heroText h2').innerHTML = `Your Favorite Recipes`;
-heroContainerMain.querySelector('.heroText p').innerHTML = `<span>${savedNumber.length !== 0 ? savedNumber.length : 0}</span> Recipes saved with love and hunger`;
 
-heroContainerMain.querySelector('a').innerHTML = `View all Favorites`;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -133,11 +133,20 @@
                         </div>
                     </template>
                 </div>
-            </section>
-        
-                
+            </section>                
         </main>
-        <script defer src="scripts/savetolocal.js" type="module"></script>
+
+        <script>
+            let savedNumber = JSON.parse(localStorage.getItem('favorites'));
+
+            ////////////////////////////////////////////////////
+            const heroContainerMain = document.querySelector('.heroContainer');
+            heroContainerMain.querySelector('.heroText h2').innerHTML = `Your Favorite Recipes`;
+            heroContainerMain.querySelector('.heroText p').innerHTML = `<span>${savedNumber ? savedNumber.length : 0}</span> Recipes saved with love and hunger`;
+
+            heroContainerMain.querySelector('a').innerHTML = `View all Favorites`;
+        </script>
+
         <script defer src="scripts/script.js"></script>
         <script defer src="scripts/hamburger.js"></script>
         <script defer src="scripts/favorites.js" type="module"></script>
