@@ -1,7 +1,7 @@
 const images = [
-    "images/recipe1.jpg",
-    "images/recipe3.jpg",
-    "images/recipe4.jpg"
+    "images/recipe1.webp",
+    "images/recipe3.webp",
+    "images/recipe4.webp"
 ];
 
 const searchBut = document.querySelector('#searchButtonContainer');

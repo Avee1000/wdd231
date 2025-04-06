@@ -1,8 +1,8 @@
 const images = [
-    "images/food45.jpeg",
-    "images/food5.jpeg",
-    "images/food6.jpg",
-    "images/food8.jpg"
+    "images/food45.webp",
+    "images/food5.webp",
+    "images/food6.webp",
+    "images/food8.webp"
 ];
 
 const randomIndex = Math.floor(Math.random() * images.length);

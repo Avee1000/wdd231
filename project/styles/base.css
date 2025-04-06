@@ -108,13 +108,13 @@ header::before{
   background-position: center center;
 }
 header.homeHeader::before {
-  background-image: url('../images/food8.jpg');
+  background-image: url('../images/food8.webp');
 }
 header.recipeHeader::before {
-  background-image: url('../images/recipe1.jpg');
+  background-image: url('../images/recipe1.webp');
 }
 header.favoriteHeader::before {
-  background-image: url('../images/fav2.jpg')
+  background-image: url('../images/fav2.webp')
 }
 header.thanksHeader::before {
   background-image: none;
