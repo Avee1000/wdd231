@@ -152,7 +152,7 @@ header.thanksHeader::before {
 }
 
 .logo{
-    filter: brightness(0) invert(1); /* Makes dark logo very white */
+    filter: brightness(0) invert(1);
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -1176,6 +1176,140 @@ a.active {
   font-weight: 100;
   color: #444444;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* CTA Bar */
+.footer-cta-bar {
+  background-color: var(--secondary); /* Olive green from your scheme */
+  color: white;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-cta-content {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-cta-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-cta-text p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer-cta-button {
+  background-color: #2e2e2e;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.footer-cta-button:hover {
+  background-color: black;
+}
+
+footer.main-footer {
+  background-color: black; 
+  padding: 6rem 0;
+}
+
+.footer-container {
+  color: #f8f8f8;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 0 4rem;
+}
+
+.footer-grid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+.brand a {
+  text-decoration: none;
+}
+
+.footer-col:not(:first-of-type) h5 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+  font-weight: 100;
+}
+
+.footer-col ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-col.brand h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer-col.brand p {
+  font-size: 0.875rem;
+}
+
+
+.social-links a{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;    
+  height: 30px; 
+  border-radius: 50%;
+  text-align: center;
+  background-color: var(--secondaryDarker);
+}
+
+.social-links svg{
+  fill: white;
+  height: 15px;
+}
+
 
 
 @media  screen and (max-width: 790px) {
