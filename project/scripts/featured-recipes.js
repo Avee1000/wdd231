@@ -94,13 +94,15 @@ async function displayRandomRecipes() {
     randomRecipes.forEach((recipe, index) => {
         const card = recipeCard[index];
 
-        const recipeImage = card.querySelector('.recipe-card .imgContainer img');
-        if (recipeImage) {
-            recipeImage.setAttribute('src', recipe.image);
-            recipeImage.setAttribute('alt', recipe.name);
-            recipeImage.setAttribute('height', 300);
-            recipeImage.setAttribute('width', 200);            
-        }
+        const recipeImageContainer = card.querySelector('.imgContainer');
+        const recipeImage = document.createElement('img');
+        recipeImage.className = 'imgContainer';
+        recipeImage.setAttribute('src', recipe.image);
+        recipeImage.setAttribute('alt', recipe.name);
+        recipeImage.setAttribute('height', 300);
+        recipeImage.setAttribute('width', 200);    
+        recipeImage.setAttribute('loading', 'lazy');
+        recipeImageContainer.appendChild(recipeImage);
 
         const recipeInfo = card.querySelector('.recipe-card .recipes');
         recipeInfo.innerHTML += `

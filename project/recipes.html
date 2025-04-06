@@ -29,7 +29,7 @@
                         <img class='logo' src="images/logo.png" alt="DishDash logo" width="100"
                         height="112">
                     </a>
-                    <h1><span class="dishdash">DishDash</h1>               
+                    <h1><span class="dishdash">DishDash</span></h1>               
                 </div>
     
                 <div id="navigationAndLabelContainer">
@@ -59,8 +59,6 @@
             <div class="heroContainer">
                 <div class="main">
                     <div class="heroText">
-                        <h2></h2>
-                        <p></p>
                     </div>
                 </div>
                 <div class="heroLinkContainer">
@@ -76,7 +74,7 @@
             <div id="searchBoxContainer">
                 <div class="searchContainer">
                     <input type="search" id="search" name="q" placeholder="Search Recipes, Meal type or Cuisines">
-                    <button aria-label="button" class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></i></button>
+                    <button aria-label="button" class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
                 </div>
     
                 <div class="close">
@@ -112,7 +110,7 @@
                 </select>
             </div>
                 
-            <section id="allRecipesInfo">
+            <div id="allRecipesInfo">
                 <div id="product-list" class="product-grid">
                     <template id="recipesCardTemplate">
                         <div class="recipesProductCard">
@@ -134,7 +132,7 @@
                     </template>
                 </div>
                 <div id="pagination" class="pagination-controls"></div>
-            </section>
+            </div>
             <div class="savedAlert">
                 <span>Recipe Saved!</span>
             </div>
@@ -143,14 +141,14 @@
         <script>
             const heroContainerMain = document.querySelector('.heroContainer');
             heroContainerMain.classList.add('recipesPage');
-            heroContainerMain.querySelector('.heroText h2').innerHTML = `Feeling hungry or curious?`;
-            heroContainerMain.querySelector('.heroText p').innerHTML = `Explore our handpicked recipes—from quick breakfasts to indulgent desserts. Search by category or scroll to discover your next favorite dish.`;
+            heroContainerMain.querySelector('.heroText').innerHTML = `<h2>Feeling hungry or curious?</h2>
+            <p>Explore our handpicked recipes—from quick breakfasts to indulgent desserts. Search by category or scroll to discover your next favorite dish.</p>`;
             heroContainerMain.querySelector('a').innerHTML = `Browse All Recipes`;
         </script>
         <script defer src="scripts/hamburger.js"></script>
         <script defer src="scripts/script.js"></script>
-        <script defer src="scripts/show-recipes.js" type="module"></script>
-        <script defer src="scripts/recipe.js" type="module"></script>
+        <script src="scripts/show-recipes.js" type="module"></script>
+        <script src="scripts/recipe.js" type="module"></script>
 
 
 

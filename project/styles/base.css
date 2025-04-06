@@ -333,17 +333,19 @@ a.active {
 
 .recipesPage .heroLinkContainer a {
   all: unset;
-  background-color: var(--darker-highlight);
-  color: white;
+  background-color: #ff9100;
+  color: black;
   display: inline-block;
   padding: .8rem 3rem;
   font-size: clamp(.5rem, 1rem, 1rem);
+  font-weight: 300;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .recipesPage .heroLinkContainer a:hover {
   background-color: var(--secondary);
+  color: white;
 }
 
 .recipesPage .learn-more::after {
@@ -1020,7 +1022,7 @@ a.active {
 
 /* ///////////////////////////////////////////////////////// */
 .headerSubmit  {
-  background-color: var(--highlight);
+  background-color: black;
   background-image: none;
   height: 80dvh;
 }
@@ -1034,11 +1036,12 @@ a.active {
   opacity: 1 !important;
 }
 .headerSubmit div.heroText h2, .headerSubmit div.heroText p {
-  color: black;
+  color: #ffffff;
 }
-.headerSubmit .learn-more {
+.headerSubmit .heroLinkContainer {
   display: none;
 }
+
 .submit-recipe-page {
   max-width: 700px;
   margin: 0 auto;
