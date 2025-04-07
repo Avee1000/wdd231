@@ -76,6 +76,41 @@
         .recipesPage .heroText p {
             font-size: clamp(.5rem, 2vw, 1.5rem);
         }
+
+        .footer-grid {
+            margin: 0 auto;
+            all: unset;
+            /* display: flex;
+            justify-content: center;
+            gap: 60px;
+            align-items: start; */
+            display: grid;
+            grid-template-areas: 
+            "logo customers company further"
+            "follow follow follow follow";
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+
+         }
+        .brand {
+            grid-area: logo;
+        }
+        .customers {
+            grid-area: customers;
+        }
+        .company {
+            grid-area: company;
+        }
+        .further {
+            grid-area: further;
+        }
+        .social {
+            grid-area: follow;
+            place-self: center;
+            text-align: center;
+            margin-top: 4rem;
+        }
     }
 
 }

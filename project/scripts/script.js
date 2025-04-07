@@ -153,3 +153,9 @@ window.addEventListener('scroll', () => {
 //     navContainer.querySelector('#logo').style.transition = 'all .2s ease-in-out';
 //   }
 // });
+
+const lastModifiedContainer = document.createElement('p'),
+    lastModified = new Date(document.lastModified);
+
+lastModifiedContainer.innerHTML = `<strong>Last Modified: </strong>${lastModified}`;
+document.querySelector('.copyright').append(lastModifiedContainer);

@@ -519,6 +519,7 @@ a.active {
 /* FEATURED RECIPE SECTION */
   .featured-recipes {
     margin: 3rem auto;
+    height: auto;
   }
   
   .featured-recipes h2 {
@@ -708,6 +709,7 @@ a.active {
 }
 
 .whats-cooking {
+  display: block;
   padding: 4rem 1rem;
   background-color: var(--darkBackground);
   text-align: center;
@@ -736,7 +738,7 @@ a.active {
 }
 
 .cooking-card h3 {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.1rem, 1.5rem);
   margin-bottom: 0.5rem;
 }
 .cooking-card h3 span {
@@ -746,9 +748,8 @@ a.active {
   padding: .3rem 1rem;
   border-radius: 10px;
 }
-
 .cooking-card p {
-  font-size: 1rem;
+  font-size: clamp(.7rem, .8rem, 1.2rem);
   line-height: 1.5;
   font-weight: 400;
   font-family: roboto;
@@ -1202,21 +1203,24 @@ a.active {
 }
 
 .footer-cta-content {
-  max-width: 1250px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 100px;
 }
 
 .footer-cta-text h3 {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  color: black;
 }
 
 .footer-cta-text p {
-  font-size: 1rem;
+  font-size: 14pt;
+  color: black;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -1226,24 +1230,17 @@ a.active {
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
 }
 
 .footer-cta-button:hover {
   background-color: black;
 }
 
-footer.main-footer {
-  background-color: black; 
-  padding: 6rem 0;
-}
-
 .footer-container {
+  background-color: var(--darkBackground); 
   color: #f8f8f8;
   margin: 0 auto;
-  max-width: 1300px;
-  padding: 0 4rem;
+  padding: 6rem 4rem 1rem 4rem;
 }
 
 .footer-grid {
@@ -1252,9 +1249,13 @@ footer.main-footer {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
   align-items: start;
+  max-width: 1300px;
 }
-.brand a {
+footer .brand a {
   text-decoration: none;
+}
+footer .brand p {
+  color: #fea32b;
 }
 
 .footer-col:not(:first-of-type) h5 {
@@ -1289,11 +1290,6 @@ footer.main-footer {
   margin-bottom: 0.25rem;
 }
 
-.footer-col.brand p {
-  font-size: 0.875rem;
-}
-
-
 .social-links a{
   display: inline-flex;
   justify-content: center;
@@ -1310,6 +1306,14 @@ footer.main-footer {
   height: 15px;
 }
 
+.copyright {
+  background-color: black;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  font-weight: 100;
+  font-size: clamp(.5rem, .8rem, 2rem);
+}
 
 
 @media  screen and (max-width: 790px) {
@@ -1384,5 +1388,55 @@ footer.main-footer {
     margin-bottom: 1rem;
   }
 
+  .footer-grid {
+    margin: 0 auto;
+    all: unset;
+    display: grid;
+    grid-template-areas: 
+    "logo"
+    "customers" 
+    "company"
+    "further"
+    "follow";
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .brand {
+      grid-area: logo;
+  }
+  .customers {
+      grid-area: customers;
+  }
+  .company {
+      grid-area: company;
+  }
+  .further {
+      grid-area: further;
+  }
+  .social {
+      grid-area: follow;
+      place-self: center;
+      text-align: center;
+  }
 
+  .featured-recipes {
+    display: flex;
+    flex-direction: column;
+    gap: 30px !important;
+  }
+  .recipe-card {
+    height: auto;
+    flex-direction: column;
+  }
+  .imgContainer {
+    max-height: 400px;
+  }
+  .right-image {
+    flex-direction: column-reverse;
+  }
+ .recipe-info {
+    text-align: center !important;
+  }
 }

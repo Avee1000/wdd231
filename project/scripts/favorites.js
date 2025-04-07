@@ -104,20 +104,26 @@ function renderSavedRecipes() {
     const list = localStorage.getItem('favorites');
     const localList = JSON.parse(list)
     console.log(localList)
-    let filtered = localList.filter((r) => {
-        const meal = mealSelect.value === "all" || r.mealType.includes(mealSelect.value);
-        const difficulty = difficultySelect.value === "all" || r.difficulty === difficultySelect.value; 
-        return meal && difficulty;
-    });
+    let filtered
 
-    if (sort.value === "name") {
-        filtered.sort((a, b) => a.name.localeCompare(b.name));
-    }else if (sort.value === "rating") {
-        filtered.sort((a, b) => b.rating - a.rating);
-    } else {
-        filtered.sort((a, b) => b.caloriesPerServing - a.caloriesPerServing);
+    if (localList) {
+        filtered = localList.filter((r) => {
+            const meal = mealSelect.value === "all" || r.mealType.includes(mealSelect.value);
+            const difficulty = difficultySelect.value === "all" || r.difficulty === difficultySelect.value;
+            return meal && difficulty;
+        });
+        
+        if (sort.value === "name") {
+            filtered.sort((a, b) => a.name.localeCompare(b.name));
+        } else if (sort.value === "rating") {
+            filtered.sort((a, b) => b.rating - a.rating);
+        } else {
+            filtered.sort((a, b) => b.caloriesPerServing - a.caloriesPerServing);
+        }
+
+        displayRecipes(filtered);
+    } else if (!localList){
+        console.log("No recipes saved");
     }
-    displayRecipes(filtered);
 }
-
 renderSavedRecipes();
