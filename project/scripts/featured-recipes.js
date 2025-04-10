@@ -123,7 +123,8 @@ async function displayRandomRecipes() {
             recipeImage.style.transition = "transform 0.7s ease-in-out";
         });
 
-        card.querySelector('.view-recipe-btn').addEventListener('click', () => {
+        card.querySelector('.view-recipe-btn').addEventListener('click', (e) => {
+            e.preventDefault();
             showModal(recipe);
         });
 

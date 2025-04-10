@@ -54,13 +54,15 @@ async function displayRecipes(recipeData) {
             child.style.backgroundColor = "";
         });
 
-        clone.querySelector('.view-recipe-btn').addEventListener('click', () => {
+        clone.querySelector('.view-recipe-btn').addEventListener('click', (e) => {
+            e.preventDefault();
             document.body.style.overflow = "hidden";
             showModal(recipe);
         });
 
         const removeButton = clone.querySelector('.removeFavorites');
         removeButton.addEventListener('click', (e) => {
+            e.preventDefault();
             const informationContainer = removeButton.parentElement.previousElementSibling;
             const containerToBeRemoved = informationContainer.parentElement;
             const nameOfRecipe = informationContainer.querySelector('h3');

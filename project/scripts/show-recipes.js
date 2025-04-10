@@ -79,7 +79,8 @@ async function displayRecipes(recipeData) {
 
         ////////////////////////////////////////////////////////////
         // SAVE TO LOCAL STORAGE CODE
-        saveButton.addEventListener("click", () => {
+        saveButton.addEventListener("click", (e) => {
+            e.preventDefault();
             saveButton.classList.toggle("saved");
             saveButton.querySelector('span').textContent = saveButton.classList.contains("saved") ? "Saved" : "Save";
 
@@ -107,7 +108,8 @@ async function displayRecipes(recipeData) {
         });
 
 
-        clone.querySelector('.view-recipe-btn').addEventListener('click', () => {
+        clone.querySelector('.view-recipe-btn').addEventListener('click', (e) => {
+            e.preventDefault();
             document.body.style.overflow = "hidden";
             showModal(recipe);
         });
