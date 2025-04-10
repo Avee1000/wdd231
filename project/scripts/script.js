@@ -19,8 +19,8 @@ let isClickEventActive = false;
 
 
 //////////////////////////////////////////////////////////
-ms.addEventListener('click', () => {
-
+ms.addEventListener('click', (event) => {
+  event.preventDefault();
     isClickEventActive = true; // Disable scroll event temporarily
 
     const target = document.querySelector('main');
