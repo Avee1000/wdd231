@@ -584,9 +584,7 @@ a.active {
   }
 
   .mealType {
-    /* color: var(--darker-highlight) !important; */
-    /* color: var(--highlight) !important; */
-    color: #cc3300 !important;
+    color: #ff4000 !important;
     font-size: calc(100% + .3em) !important;
     font-weight: 700;
   }
@@ -594,7 +592,7 @@ a.active {
   .recipe-info p {
     font-size: clamp(.5rem, .8rem, 1rem);
     /* color: var(--text-muted); */
-    color: var(--dark-card-bg);
+    color: var(--dark-border);
     margin-bottom: 1rem;
     line-height: 1;
   }
@@ -821,9 +819,9 @@ a.active {
   margin: .4rem;
 }
 .recipeInformationContainer .mealType {
-  color: #cc3300 !important;
+  /* color: #cc3300 !important; */
   font-weight: 600;
-  /* ff4000 */
+  color: #ff4000 !important;
 }
 .recipeInformationContainer h3 {
   font-size: clamp(.2rem, 1rem, 1.5rem);
@@ -894,26 +892,27 @@ a.active {
   display: flex;
   gap: 5px;;
   justify-content: center;
-  /* color: #ff4000; */
-  color: #cc3300;
+  color: #ff4000;
+  /* color: #cc3300; */
   padding: 0.7rem 1rem;
-  border: 3px solid #cc3000;
+  border: 3px solid #ff4000;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 14pt;
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
 .addFavorites svg {
-  /* fill: #ff4000; */
-  fill: #cc3300;
+  fill: #ff4000;
+  /* fill: #cc3300; */
   height: 20px;
   display: inline;
 }
 
 .addFavorites.saved .heart-icon {
-  fill: #cc3000 !important;
+  /* fill: #cc3000 !important; */
+  fill: #ff4000 !important;
   animation: pop .5s  linear forwards;
 }
 @keyframes pop {
@@ -922,23 +921,26 @@ a.active {
   }
   40% {
     transform: scale(1.2) rotate(-10deg);
-    background-image: url('../images/heart-solid\ \(1\).svg'); 
+    background-image: url('../images/heart-solid.svg'); 
   }
   75% {
     transform: scale(1.5) rotate(0deg);
-    background-image: url('../images/heart-solid\ \(1\).svg'); 
+    background-image: url('../images/heart-solid.svg'); 
   }
   100% {
     transform: scale(1) rotate(0deg);
-    background-image: url('../images/heart-solid\ \(1\).svg'); 
+    background-image: url('../images/heart-solid.svg'); 
   }
 }
 
 .recipeLinksContainer .view-recipe-btn {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   font-size: 14pt;
-  font-weight: 800;
+  font-weight: 500;
   padding: 0.7rem 1rem;
 }
 .recipeLinksContainer .view-recipe-btn:hover {
